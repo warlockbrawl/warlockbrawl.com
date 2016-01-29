@@ -18,6 +18,7 @@ The website is written in multiple different preprocessors and then built and as
 - Have [node + npm](https://nodejs.org/) installed
 - ``npm install -g gulp bower``
 - ``git clone https://github.com/warlockbrawl/warlockbrawl.com.git``
+- ``cd warlockbrawl.com``
 - ``npm install``
 - ``bower install``
 - ``gulp build``
