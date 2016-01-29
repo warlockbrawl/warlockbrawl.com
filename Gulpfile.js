@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
 var connect = require('gulp-connect');
-var watch = require('gulp-watch');
 
 var jade = require('gulp-jade');
 
