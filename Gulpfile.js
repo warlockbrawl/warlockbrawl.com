@@ -59,6 +59,11 @@ gulp.task('styles', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('fonts', function() {
+  return gulp.src(bowerDir + '/font-awesome/fonts/*')
+    .pipe(gulp.dest('public/assets/fonts'));
+});
+
 
 gulp.task('minify:scripts', ['scripts'], function() {
   return gulp.src('public/assets/js/app.js')
@@ -81,7 +86,6 @@ gulp.task('watch', ['connect'], function() {
   gulp.watch('less/**/*.less', ['styles']);
 });
 
-
 gulp.task('connect', function() {
   connect.server({
     port: 8888,
@@ -90,6 +94,6 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('build', ['templates', 'minify:scripts', 'minify:styles']);
 
+gulp.task('build', ['templates', 'minify:scripts', 'minify:styles', 'fonts']);
 gulp.task('default', ['build', 'watch']);
