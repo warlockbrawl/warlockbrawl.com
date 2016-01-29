@@ -1,0 +1,48 @@
+.bg-video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: @bg-video-bg-base;
+  background: @bg-video-bg;
+  color: @bg-video-color;
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: @zindex-bg-video;
+    pointer-events: none;
+    filter: blur(2px); // TODO: CSS blur adds some weird borders on the
+                       // video, it would be better to prerender the blur.
+                       // (The poster needs to be blurred anyway.)
+
+    @media (min-aspect-ratio: 16/9) {
+      height: 300%;
+      top: -100%;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      width: 300%;
+      left: -100%;
+    }
+
+    @supports(object-fit: cover) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media @phone {
+    background: @bg-video-bg, url("../img/d2warlock.jpg") center center / cover no-repeat;
+
+    .bg-video {
+      display: none;
+    }
+  }
+}
