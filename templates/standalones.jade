@@ -1,0 +1,113 @@
+extends app.jade
+
+block append config
+  -
+    app.title = 'Standalone history - ' + app.title;
+
+block content
+  div.container
+    h2 List of Warlock-inspired games
+    p.
+      This is by no means an exhaustive list. Many of these are known because their creators came to our forums to ask about permissions/licenses or sometimes just to mingle. For others it's been serendipity. The point is there are a lot of these.
+    div.table-responsive
+      table.table.table-striped.sortable
+        thead
+          tr
+            th(data-defaultsort="asc") Date
+            th Title/developer
+            th Engine/language
+            th In-house?
+            th Dead?
+            th(data-defaultsort="disabled") Notes
+        tbody
+          tr
+            td 2015-12-12
+            td Untitled project by Slence
+            td Unity
+            td No
+            td N/A
+            td 
+          tr
+            td 2015-05-10
+            td Untitled UE4 project by Adynathos
+            td Unreal Engine 4
+            td Yes
+            td Not yet
+            td This is the revival of the canceled UDK project, also by Adynathos.
+          tr
+            td 2014-12-11
+            td Sorcerer by Aphotic (Team Syntax)
+            td N/A
+            td No
+            td No
+            td 
+          tr
+            td 2013-07-16
+            td Cantrips and Cooldowns by dkramer
+            td JBox2D
+            td No
+            td N/A
+            td Made in a 2D engine
+          tr
+            td 2014-04
+            td Spellsworn by Frogsong Studios
+            td Unreal Engine 4
+            td No
+            td No
+            td Is available as early access on Steam.
+          tr
+            td 2015-04-30
+            td Untitled project by Papasito
+            td C++
+            td No
+            td N/A
+            td
+          tr
+            td 2013-02-21
+            td Untitled UDK project by Toraxxx and later Adynathos
+            td UDK
+            td Yes
+            td Yes
+            td Succeeded by an UE4 project by Adynathos with the same goals.
+          tr
+            td 2012-07-27
+            td Untitled project by jwahlberg
+            td Unity
+            td No
+            td Yes
+            td 
+          tr
+            td 2013-06-10
+            td Untitled project by Quellquun (Only-Entertainment)
+            td N/A
+            td No
+            td N/A
+            td 
+          tr
+            td 2010
+            td Warlocks by Mushy Studios
+            td OGRE/C++
+            td Yes? (See notes)
+            td Yes
+            td This project was not being developed by the original Warlock team, but both were in close communication. It was also one of the more anticipated standalones, having been in development during Warlock's peak, and then setting the bar for standalones to come by dissipating after a couple of months of work.
+          tr
+            td 2009-2010
+            td N/A (Warlock Arena?)
+            td Flash (browser game)
+            td No
+            td Yes
+            td This one might've vanished off the face of the planet.
+          tr
+            td 2011-01-13 (release)
+            td Bloodline Champions by Stunlock Studios
+            td XNA
+            td No
+            td Uh
+            td #[strong OK, this one is not inspired Warlock.] The developers have said they never played Warlock prior to starting Bloodline Champions. It did share a lot of the ideas and concepts as Warlock however and there was some overlap of players.
+          tr
+            td 2010-present
+            td Magecraft, Starlocks, more
+            td Mods of other games
+            td No
+            td N/A
+            td Not standalones, but mods of other games, primarily Starcraft II.

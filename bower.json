@@ -1,0 +1,10 @@
+{
+  "name": "warlockbrawl",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "moment": "^2.11.1",
+    "bootstrap-sortable": "^1.12.0"
+  }
+}
