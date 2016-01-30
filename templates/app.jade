@@ -40,9 +40,9 @@ html(lang="en")
               div#navbar.collapse.navbar-collapse
                 ul.nav.navbar-nav
                   block navigation-links
-                    li #[a(href="/download") Download]
-                    li #[a(href="/faq") FAQ]
-                    li #[a(href="/forums") Forum]
+                    li(class=(app.activeNav==='/download'?'active':'')) #[a(href="/download") Download]
+                    li(class=(app.activeNav==='/faq'     ?'active':'')) #[a(href="/faq") FAQ]
+                    li(class=(app.activeNav==='/forums'  ?'active':'')) #[a(href="/forums") Forum]
 
         main#content.app-content
           block content
