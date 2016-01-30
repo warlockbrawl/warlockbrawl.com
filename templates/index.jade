@@ -1,11 +1,7 @@
 extends app.jade
 
 block content
-  div.jumbotron.bg-video-container
-    video.bg-video(loop, muted, autoplay, poster="/assets/img/d2warlock.jpg")
-      source(src="/assets/img/d2warlock.webm" type="video/webm")
-      source(src="/assets/img/d2warlock.mp4" type="video/mp4")
-      source(src="/assets/img/d2warlock.ogv" type="video/ogg")
+  div.jumbotron.bg-video-container.bg-video-static(data-bg-video="d2warlock")
     div.container
       h1= app.name
       p.

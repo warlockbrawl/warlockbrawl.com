@@ -1,1 +1,10 @@
-var x = 4;
+$(function() {
+	if (!isMobile.any) {
+		$('.bg-video-container[data-bg-video]').each(function() {
+			var t = $(this),
+				path = '/assets/img/' + t.data('bg-video');
+			t.prepend('<video class="bg-video" loop muted autoplay poster="' + path + '.jpg"><source src="' + path + '.webm" type="video/webm"></source><source src="' + path + '.mp4" type="video/mp4"></source><source src="' + path + '.ogv" type="video/ogg"></source></video>');
+			t.removeClass('bg-video-static');
+		});
+	}
+})
