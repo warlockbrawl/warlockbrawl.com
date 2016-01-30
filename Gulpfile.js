@@ -32,9 +32,9 @@ gulp.task('scripts', function() {
       bowerDir + '/jquery/dist/jquery.min.js',
       bowerDir + '/isMobile/isMobile.min.js',
 
+      bowerDir + '/bootstrap/js/affix.js',
       bowerDir + '/bootstrap/js/collapse.js',
-      bowerDir + '/bootstrap/js/dropdown.js',
-      bowerDir + '/bootstrap/js/tooltip.js',
+      bowerDir + '/bootstrap/js/scrollspy.js',
       bowerDir + '/bootstrap/js/transition.js',
 
       //bowerDir + '/moment/min/moment.min.js', While bootstrap-sortable depends on moment, it can do fine without it, as can we.
