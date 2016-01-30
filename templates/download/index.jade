@@ -75,19 +75,18 @@ block content
       }
     ];
 
-  mixin download(downloads)
-    each download in downloads
-      tr
-        td= download.title
-        td
-          if download.changelog
-            a(href= download.changelog) #[i.fa.fa-file-text-o]
-          if download.direct
-            if download.link
-              a(href= download.link) #[i.fa.fa-globe]
-            a(href= download.direct) #[i.fa.fa-download] #{download.link ? download.link : download.direct}
-          else if download.link
-            a(href= download.link) #[i.fa.fa-globe] #{download.link}
+  mixin download-row(download)
+    tr
+      td= download.title
+      td
+        if download.changelog
+          a(href= download.changelog) #[i.fa.fa-file-text-o]
+        if download.direct
+          if download.link
+            a(href= download.link) #[i.fa.fa-globe]
+          a(href= download.direct) #[i.fa.fa-download] #{download.link ? download.link : download.direct}
+        else if download.link
+          a(href= download.link) #[i.fa.fa-globe] #{download.link}
 
   div.container
     h2 Downloads
@@ -97,11 +96,13 @@ block content
           td(colspan="2")
             h3 #[i.fa.fa-map] Warcraft III maps
 
-        +download(releases)
+        each release in releases
+          +download-row(release)
 
         tr
           td(colspan="2")
             h3 #[i.fa.fa-wrench] Warcraft III tools
 
-        +download(tools)
+        each tool in tools
+          +download-row(tool)
 
