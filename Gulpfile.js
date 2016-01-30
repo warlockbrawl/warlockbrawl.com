@@ -30,6 +30,7 @@ gulp.task('scripts', function() {
   return gulp.src([
 
       bowerDir + '/jquery/dist/jquery.min.js',
+      bowerDir + '/isMobile/isMobile.min.js',
 
       bowerDir + '/bootstrap/js/collapse.js',
       bowerDir + '/bootstrap/js/dropdown.js',

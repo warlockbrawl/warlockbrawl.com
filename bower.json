@@ -6,6 +6,7 @@
     "jquery": "^2.2.0",
     "moment": "^2.11.1",
     "bootstrap-sortable": "^1.12.0",
-    "font-awesome": "fontawesome#^4.5.0"
+    "font-awesome": "fontawesome#^4.5.0",
+    "isMobile": "^0.3.9"
   }
 }
