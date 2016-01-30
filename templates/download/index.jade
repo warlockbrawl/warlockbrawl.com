@@ -6,6 +6,102 @@ block append config
     app.activeNav = '/download';
 
 block content
+  -
+    var releases = [
+      {
+        title: '1.01b',
+        changelog: app.url + 'forums/wc3-general-discussion/warlock-1-01b-released',
+        direct: app.url + 'forums/wc3-maps/warlock-1-01b?action=dlattach;attach=354',
+        link: app.url + 'forums/wc3-maps/warlock-1-01b'
+      },
+      {
+        title: '1.01',
+        changelog: app.url + 'forums/wc3-general-discussion/warlock-1-01-released',
+        direct: app.url + 'forums/wc3-maps/warlock-1-01?action=dlattach;attach=338',
+        link: app.url + 'forums/wc3-maps/warlock-1-01' 
+      },
+      {
+        title: '1.00c',
+        changelog: app.url + 'forums/wc3-general-discussion/warlock-1-00c-released',
+        direct: app.url + 'forums/wc3-maps/warlock-1-00c?action=dlattach;attach=189',
+        link: app.url + 'forums/wc3-maps/warlock-1-00c' 
+      },
+      {
+        title: '1.00b',
+        changelog: app.url + 'forums/wc3-general-discussion/warlock-1-00b-released',
+        direct: app.url + 'forums/wc3-maps/warlock-1-00b?action=dlattach;attach=188',
+        link: app.url + 'forums/wc3-maps/warlock-1-00b' 
+      },
+      {
+        title: '1.00',
+        changelog: app.url + 'archive/post/9201/warlock-100-released',
+        direct: app.url + 'forums/wc3-maps/warlock-1-00?action=dlattach;attach=187',
+        link: app.url + 'forums/wc3-maps/warlock-1-00' 
+      },
+      {
+        title: '099c',
+        changelog: app.url + 'archive/post/5753/warlock-099c-released',
+        direct: app.url + 'forums/wc3-maps/warlock-099c?action=dlattach;attach=186',
+        link: app.url + 'forums/wc3-maps/warlock-099c' 
+      },
+      {
+        title: '099b',
+        changelog: app.url + 'archive/post/3990/warlock-099b-released',
+        direct: app.url + 'forums/wc3-maps/warlock-099b?action=dlattach;attach=185',
+        link: app.url + 'forums/wc3-maps/warlock-099b' 
+      },
+      {
+        title: '099',
+        changelog: app.url + 'archive/post/2584/warlock-099-released',
+        direct: app.url + 'forums/wc3-maps/warlock-099?action=dlattach;attach=184',
+        link: app.url + 'forums/wc3-maps/warlock-099' 
+      },
+      {
+        title: 'Older...',
+        link: app.url + 'forums/wc3-general-discussion/warlock-history-55'
+      }
+    ];
+
+    var tools = [
+      {
+        title: 'Warlock Keys',
+        direct: app.url + 'forums/wc3-tools/warlock-keys?action=dlattach;attach=182',
+        link: app.url + 'forums/wc3-tools/warlock-keys',
+      },
+      {
+        title: 'Custom Terrain Editor',
+        direct: app.url + 'forums/wc3-tools/cte-(custom-terrain-editor)?action=dlattach;attach=183',
+        link: app.url + 'forums/wc3-tools/cte-(custom-terrain-editor)'
+      }
+    ];
+
+  mixin download(downloads)
+    each download in downloads
+      tr
+        td= download.title
+        td
+          if download.changelog
+            a(href= download.changelog) #[i.fa.fa-file-text-o]
+          if download.direct
+            if download.link
+              a(href= download.link) #[i.fa.fa-globe]
+            a(href= download.direct) #[i.fa.fa-download] #{download.link ? download.link : download.direct}
+          else if download.link
+            a(href= download.link) #[i.fa.fa-globe] #{download.link}
+
   div.container
     h2 Downloads
-    p Whatever
+    table.table.table-condensed.download-table
+      tbody
+        tr
+          td(colspan="2")
+            h3 #[i.fa.fa-map] Warcraft III maps
+
+        +download(releases)
+
+        tr
+          td(colspan="2")
+            h3 #[i.fa.fa-wrench] Warcraft III tools
+
+        +download(tools)
+
