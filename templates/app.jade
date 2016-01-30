@@ -4,7 +4,8 @@ block config
       url: 'https://www.warlockbrawl.com/',
       name: 'Warlock Brawl',
       title: 'Warlock Brawl',
-      description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!'
+      description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!',
+      bodyAttrs: {}
     };
 
 doctype html
@@ -20,7 +21,7 @@ html(lang="en")
         link(rel="stylesheet", href="/assets/css/app.css")
       block scripts
         script(src="/assets/js/app.js")
-  body
+  body&attributes(app.bodyAttrs)
     div#app.app
       block app
         nav.app-navigation.navbar.navbar-inverse.navbar-fixed-top
