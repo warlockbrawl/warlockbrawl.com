@@ -3,4 +3,8 @@ bower_components
 
 *.sublime-*
 
+!public/
 public/*
+!public/assets/
+public/assets/*
+!public/assets/img/
