@@ -4,8 +4,93 @@ block append config
   -
     app.title = 'FAQ - ' + app.title;
     app.activeNav = '/faq';
+    app.bodyAttrs = {
+      'data-spy': 'scroll',
+      'data-target': '#sidebar',
+      'data-offset': '90'
+    };
 
 block content
+  -
+    var faq = [
+      {
+        category: 'Dota 2',
+        questions: [
+          {
+            question: 'Is Warlock available for Dota 2?',
+            answer: 'The Warlock mod (Warlock Brawl) can be played in Dota 2 workshop <a href="/dota">here</a>.'
+          },
+          {
+            question: 'Is the Warlock Brawl mod based on the original Warlock map?',
+            answer: 'Yes. The exact game balance (spells, movement speed, etc.) is transferred from WC3 to Dota 2 - parameters the Warlock Brawl community has decided over the course of many years. There are also improvements, new spells/items and new features.'
+          },
+          {
+            question: 'Who is developing the Warlock Brawl mod?',
+            answer: '<p>Toraxxx <ul> <li>Assisting developer of the original Warlock</li> <li>Works with spells, items, AI, modifier tech, pillars, UI, models, platform tech</li> <li>Current maintainer</li> </ul> </p> <p>Adynathos <ul> <li>Developer of the original Warlock and lead developer of the standalone</li> <li>Works with physics engine, systems</li> </ul> </p> <p>Zymoran <ul> <li>Developer of the original Warlock</li> <li>Works with game concept and balances</li> </ul> </p>'
+          },
+          {
+            question: 'Can I help?',
+            answer: 'Just like for the WC3 Warlock map, we also rely on your feedback to improve the Warlock Brawl gameplay. Try the mod and tell us (on our forums or Steam community) what you think could be improved.'
+          },
+          {
+            question: 'Is the WC3 Warlock map still being developed?',
+            answer: 'There may be rare releases in the future to patch critical bugs, add tournament awards or add new content that\'s interesting enough, but the WC3 map is no longer in active development.'
+          }
+        ]
+      },
+      {
+        category: 'Warcraft III',
+        questions: [
+          {
+            question: 'Where can I play WC3 Warlock?',
+            answer: 'Battle.net, <a href="http://eurobattle.net/" target="_blank">Eurobattle.net</a> or <a href="http://iccup.com/en/" target="_blank">iccup</a> are commonly used clients, but <a href="#warcraft-iii-is-warlock-still-active">don\'t expect much activity</a>. Check out <a href="/forums/wc3-general-discussion/warlock-players">this topic</a> if you want to find players or see <a href="/forums/wc3-general-discussion/warlock-players/msg3388#msg3388">this post</a> specifically for a Skype group.'
+          },
+          {
+            question: 'Where can I get the latest version?',
+            answer: 'The latest version can be found <a href="/download">here</a>, on <a href="http://www.hiveworkshop.com/forums/maps-564/warlock-92687/" target="_blank">Hiveworkshop</a> or on epicwar.com.'
+          },
+          {
+            question: 'Is Warlock still active?',
+            answer: 'There are still many people who play Warlock competitively or casually all across the world, scattered across many WC3 clients. There are however very few dedicated online Warlock communities left, if any.'
+          }
+        ]
+      },
+      {
+        category: 'Standalone',
+        questions: [
+          {
+            question: 'Is the Warlock standalone coming soon?',
+            answer: 'Short answer: No. <br> The idea of a Warlock standalone is a nice one, so nice it has been attempted <a href="/standalones.html">multiple times in the past</a>, but never succeeded due to various issues. <a href="/forums/general-discussion/warlock-udk">Progress was made</a> on a standalone in UDK by us, the original development team, some time ago, but focus was shifted towards the Dota 2 version. There is currently an effort by Adynathos to bring back the standalone in UE4. <a href="/forums/general-discussion/warlock-standalone-reactivated-401">Read more</a>.'            
+          }
+        ]
+      }
+    ];
+
+    function urlify(t) {
+      return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    }
+
   div.container
-    h2 Frequently asked questions
-    p Whatever
+    h2.page-header Frequently asked questions
+    div.row
+      div.col-md-9
+        each category in faq
+          - category.anchor = urlify(category.category);
+          span.adjusted-anchor(id= category.anchor)
+          section
+            h3.page-header= category.category
+            each question in category.questions
+              - question.anchor = urlify(question.question)
+              dl
+                span.adjusted-anchor(id= category.anchor + '-' + question.anchor)
+                dt!= question.question
+                dd!= question.answer
+      div.col-md-3
+        nav#sidebar.bs-docs-sidebar.bs-docs-sidebar-expanded.hidden-xs.hidden-sm(data-spy="affix", data-offset-top= app.bodyAttrs['data-offset'])
+          ul.nav.nav-stacked
+            each category in faq
+              li
+                a(href= "#" + category.anchor)= category.category
+                ul.nav.nav-stacked
+                  each question in category.questions
+                    li #[a(href= "#" + category.anchor + '-' + question.anchor)!= question.question]
