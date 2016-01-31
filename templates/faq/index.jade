@@ -76,8 +76,8 @@ block content
       div.col-md-9
         each category in faq
           - category.anchor = urlify(category.category);
-          span.adjusted-anchor(id= category.anchor)
           section
+            span.adjusted-anchor(id= category.anchor)
             h3.page-header= category.category
             each question in category.questions
               - question.anchor = urlify(question.question)
