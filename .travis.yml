@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- "0.10"
+before_script:
+- npm install -g gulp bower
+- bower install
+script: bash ./deploy.sh
+env:
+  global:
+  - GH_REF: github.com/warlockbrawl/warlockbrawl.com.git
