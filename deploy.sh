@@ -2,15 +2,15 @@
 set -e # exit with nonzero exit code if anything fails
 
 # Deploy script for Travis CI to push to GitHub Pages.
-rm -rf public || exit 0;
-mkdir public;
+#rm -rf public || exit 0; the public dir should already exist (containing images/videos only)
+#mkdir public;
 
 gulp build
 
 cd public
 git init
 
-git config user.name "Travis CI"
+git config user.name "travis-ci"
 git config user.email "travis@travis"
 
 git add .
