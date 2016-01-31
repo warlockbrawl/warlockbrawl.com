@@ -6,8 +6,7 @@
   background-color: @bg-video-bg-base;
   background: @bg-video-bg;
   color: @bg-video-color;
-  //box-shadow: inset 0px 5px 5px -5px black, inset 0px -5px 5px -5px black;
-  box-shadow: inset 0px 0px, inset 0px -5px 5px -5px black;
+  box-shadow: inset 0px -5px 5px -5px black;
 
   &.bg-video-static {
     background: @bg-video-bg, url("../img/d2warlock.jpg") center center / cover no-repeat; // This more or less means there can only be one bg-video, but whatever.
@@ -21,9 +20,6 @@
     height: 100%;
     z-index: @zindex-bg-video;
     pointer-events: none;
-    filter: blur(2px); // TODO: CSS blur adds some weird borders on the
-                       // video, it would be better to prerender the blur.
-                       // (The poster needs to be blurred anyway.)
 
     @media (min-aspect-ratio: 16/9) {
       height: 300%;
