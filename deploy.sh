@@ -8,6 +8,7 @@ set -e # exit with nonzero exit code if anything fails
 gulp build
 
 cd public
+echo "${GH_CNAME}" > CNAME
 git init
 
 git config user.name "travis-ci"
