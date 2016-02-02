@@ -8,7 +8,8 @@ set -e # exit with nonzero exit code if anything fails
 gulp build
 
 cd public
-echo "${GH_CNAME}" > CNAME
+printf ${GH_CNAME} > CNAME
+printf "User-agent: * \nDisallow: /" > robots.txt
 git init
 
 git config user.name "travis-ci"
