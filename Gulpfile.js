@@ -9,8 +9,8 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
-var minifyCss = require('gulp-cssnano');
+var autoprefixer = require('gulp-autoprefixer');
+var cssnano = require('gulp-cssnano');
 
 var nodeDir = 'node_modules';
 var bowerDir = 'bower_components';
@@ -53,7 +53,7 @@ gulp.task('styles', function() {
   return gulp.src('scss/app.scss')
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(prefix())
+    .pipe(autoprefixer())
     .pipe(rename('app.css'))
     .pipe(gulp.dest('public/assets/css'))
     .pipe(connect.reload());
@@ -74,7 +74,7 @@ gulp.task('minify:scripts', ['scripts'], function() {
 
 gulp.task('minify:styles', ['styles'], function() {
   return gulp.src('public/assets/css/app.css')
-    .pipe(minifyCss())
+    .pipe(cssnano())
     .pipe(rename('app.min.css'))
     .pipe(gulp.dest('public/assets/css'));
 });
