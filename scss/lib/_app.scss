@@ -1,9 +1,9 @@
 .app-navbar.app-navbar-bordered {
-	border-bottom: 1px solid $gray-lighter;
+  border-bottom: 1px solid $gray-lighter;
 }
 
 .app-footer {
-	padding: 2rem 1rem;
+  padding: 2rem 1rem;
   background-color: $gray-lightest;
   margin-top: 4rem;
   font-size: 85%;
@@ -13,20 +13,19 @@
   }
 
   .app-footer-links {
-  	padding-left: 0;
-  	margin-bottom: 1rem;
+    padding-left: 0;
+    margin-bottom: 1rem;
 
-  	li {
-  		display: inline-block;
+    li {
+      display: inline-block;
 
-  		+ li {
-  			margin-left: 1rem;
-  		}
-  	}
+      + li {
+        margin-left: 1rem;
+      }
+    }
 
-  	a {
-  		font-weight: 500;
-  		color: $gray;
-  	}
+    a {
+      color: $gray;
+    }
   }
 }
