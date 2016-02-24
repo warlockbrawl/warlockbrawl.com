@@ -39,8 +39,14 @@ html(lang="en")
         main#content.app-content
           block content
 
-        footer#footer.app-footer
+        footer#footer.app-footer.text-muted
           block footer
             div.container
-              hr
+              ul.app-footer-links
+                block footer-links
+                  li #[a(href="/about") About]
+                  li #[a(href="/faq") FAQ]
+                  li #[a(href="/concact") Contact]
+                  li #[a(href="https://steamcommunity.com/groups/warlockbrawl") Steam]
+                  li #[a(href="https://github.com/warlockbrawl") GitHub]
               p &copy; 2008-2016 #{app.name}
