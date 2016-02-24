@@ -23,7 +23,8 @@ html(lang="en")
   body&attributes(app.bodyAttrs)
     div#app.app
       block app
-        header.navbar.navbar-light.navbar-static-top.app-navbar
+        - var bordered = app.activeNav === undefined ? 'app-navbar-bordered' : '';
+        header.navbar.navbar-light.navbar-static-top.app-navbar(class= bordered)
           block header
             div.clearfix
               button.navbar-toggler.pull-xs-right.hidden-sm-up(type="button", data-toggle="collapse", data-target="#main-nav") &#9776;
