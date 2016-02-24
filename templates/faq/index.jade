@@ -70,27 +70,27 @@ block content
       return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     }
 
+  div.jumbotron
+    div.container
+      h1.display-4 Frequently asked questions
+
   div.container
-    h2.page-header Frequently asked questions
-    div.row
-      div.col-md-9
-        each category in faq
-          - category.anchor = urlify(category.category);
-          section
-            span.adjusted-anchor(id= category.anchor)
-            h3.page-header= category.category
+    h2 Contents
+    ul
+      each category in faq
+        - category.anchor = urlify(category.category);
+        li #[a(href="#" + category.anchor)= category.category]
+          ul
             each question in category.questions
               - question.anchor = urlify(question.question)
-              dl
-                span.adjusted-anchor(id= category.anchor + '-' + question.anchor)
-                dt!= question.question
-                dd!= question.answer
-      div.col-md-3
-        nav#sidebar.bs-docs-sidebar.bs-docs-sidebar-expanded.hidden-xs.hidden-sm(data-spy="affix", data-offset-top= app.bodyAttrs['data-offset'])
-          ul.nav.nav-stacked
-            each category in faq
-              li
-                a(href= "#" + category.anchor)= category.category
-                ul.nav.nav-stacked
-                  each question in category.questions
-                    li #[a(href= "#" + category.anchor + '-' + question.anchor)!= question.question]
+              li #[a(href="#" + category.anchor + '-' + question.anchor)!= question.question]
+
+    each category in faq
+      section
+        span.adjusted-anchor(id= category.anchor)
+        h2.page-header= category.category
+        each question in category.questions
+          dl
+            span.adjusted-anchor(id= category.anchor + '-' + question.anchor)
+            dt!= question.question
+            dd!= question.answer
