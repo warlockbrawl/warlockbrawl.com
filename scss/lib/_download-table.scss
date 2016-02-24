@@ -1,0 +1,10 @@
+table.download-table {
+  td a {
+    margin-right: 10px;
+    text-decoration: none;
+  }
+
+  tr:first-child td {
+    border-top: none;
+  }
+}

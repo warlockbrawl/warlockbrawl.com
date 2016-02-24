@@ -1,21 +1,25 @@
 extends app.jade
 
+block append config
+  -
+    app.activeNav = '/';
+
 block content
   div.jumbotron.bg-video-container.bg-video-static(data-bg-video="d2warlock")
     div.container
-      h1= app.name
-      p.
+      h1.display-3= app.name
+      p.lead.
         Physics-based arena game concept. #[br]
         Veteran Warcraft 3 map turned Dota 2 mod.
-      p
-        a.btn.btn-primary.btn-lg(href="/dota", role="button") Play now »
+      p.lead
+        a.btn.btn-primary.btn-lg(href="/dota", role="button") Play now &raquo;
 
   div.container
     h2 Welcome to Warlock
     p.
       Warlock, or Warlock Brawl, is a game concept that has had incarnations spanning multiple platforms. Its most well-known is the Warcraft III map, a mod for the #[a(href="https://en.wikipedia.org/wiki/Warcraft_III:_The_Frozen_Throne") 2003 Blizzard game], which underwent active development for over 6 years. Since July 2014, efforts by the original team to port the mod from this archaic platform to #[a(href="/dota") Dota 2] have been the primary focus for Warlock.
     p.
-      As well as modifications of games, Warlock has existed as a myriad of standalone game projects, the majority of which undertaken by unaffiliated indie developers who had been inspired by the WC3 map. You can see a list of #[em known] Warlock-inspired games #[a(href="standalones.html") here]. There is currently an under-the-radar standalone project in development, lead by original co-creator Adynathos.
+      As well as modifications of games, Warlock has existed as a myriad of standalone game projects, the majority of which undertaken by indie developers who had been inspired by the WC3 map. You can see a list of #[em known] Warlock-inspired games #[a(href="standalones.html") here]. There is currently an under-the-radar standalone project in development, lead by original co-creator Adynathos.
     h3 As a game
     p.
-      In short it's a physics-based arena game.
+      In short it's a physics-based arena game with a focus on skill. There's no RNG, all attacks must be aimed and there is no spell that can completely stun a player. For more details, see the #[a(href="warlock.html") description of Warlock&apos;s gameplay].
