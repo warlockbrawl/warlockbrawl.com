@@ -3,14 +3,9 @@ warlockbrawl.com
 
 [![Build Status](https://travis-ci.org/warlockbrawl/warlockbrawl.com.svg?branch=master)](https://travis-ci.org/warlockbrawl/warlockbrawl.com)
 
-This repository is the source code to the warlockbrawl.com website. Its primary function is for the team to collaborate
-on site content, but if you spot something feel free to submit pull requests or
+This repository is the source code to the warlockbrawl.com website. It's mostly here for the team to collaborate
+on site content, but if you spot something feel free to submit a pull request or
 [open a issue](https://github.com/warlockbrawl/warlockbrawl.com/issues). A live version of the latest build can be found on http://latest.warlockbrawl.com.
-
-Todo
-------------
-
-This is an early build, nothing really to see here yet.
 
 Building
 -------------------------------------
