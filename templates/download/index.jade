@@ -90,21 +90,25 @@ block content
         else if download.link
           a(href= download.link) #[i.fa.fa-globe] #{download.link}
 
+  div.jumbotron
+    div.container
+      h1.display-4 Downloads
+
   div.container
-    h2.page-header Downloads
-    table.table.table-condensed.download-table
-      tbody
-        tr
-          td(colspan="2")
-            h3 #[i.fa.fa-map] Warcraft III maps
+    div.table-responsive
+      table.table.table-sm.download-table
+        tbody
+          tr
+            td(colspan="2")
+              h3 #[i.fa.fa-map] Warcraft III maps
 
-        each release in releases
-          +download-row(release)
+          each release in releases
+            +download-row(release)
 
-        tr
-          td(colspan="2")
-            h3 #[i.fa.fa-wrench] Warcraft III tools
+          tr
+            td(colspan="2")
+              h3 #[i.fa.fa-wrench] Warcraft III tools
 
-        each tool in tools
-          +download-row(tool)
+          each tool in tools
+            +download-row(tool)
 
