@@ -26,7 +26,6 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
-$gray-darker:               #0c0d0e !default;
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
@@ -667,9 +666,9 @@ $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
 
 
-// Background video
+// Jumbotron video
 
 $jumbotron-video-color:              $gray-lighter;
-$jumbotron-video-bg-base:            transparentize($gray-darker, 0.4);
-$jumbotron-video-bg:                 linear-gradient(to right, transparentize($gray-darker, 0.1), transparentize($gray-darker, 0.9));
+$jumbotron-video-bg-base:            transparentize($gray-dark, 0.4);
+$jumbotron-video-bg:                 linear-gradient(to right, transparentize($gray-dark, 0.1), transparentize($gray-dark, 0.9));
 $zindex-jumbotron-video:             -1010;

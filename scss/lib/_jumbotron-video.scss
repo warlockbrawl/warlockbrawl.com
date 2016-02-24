@@ -1,4 +1,4 @@
-.bg-video-container {
+.jumbotron-video-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -9,11 +9,11 @@
   //box-shadow: inset 0px -5px 5px -5px black;
   border-radius: 0px;
 
-  &.bg-video-static {
+  &.jumbotron-video-static {
     background: $jumbotron-video-bg, url("../img/d2warlock.jpg") center center / cover no-repeat; // This more or less means there can only be one bg-video, but whatever.
   }
 
-  .bg-video {
+  .jumbotron-video {
     position: absolute;
     top: 0;
     left: 0;
