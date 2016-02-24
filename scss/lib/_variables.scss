@@ -365,9 +365,9 @@ $zindex-modal:             1050 !default;
 
 // Navbar
 
-$navbar-border-radius:              $border-radius !default;
-$navbar-padding-horizontal:         $spacer !default;
-$navbar-padding-vertical:           ($spacer / 2) !default;
+$navbar-border-radius:              0rem !default;
+$navbar-padding-horizontal:         ($spacer / 2) !default;
+$navbar-padding-vertical:           ($spacer / 4) !default;
 
 $navbar-dark-color:                 rgba(255,255,255,.5) !default;
 $navbar-dark-hover-color:           rgba(255,255,255,.75) !default;
@@ -673,8 +673,3 @@ $jumbotron-video-color:              $gray-lighter;
 $jumbotron-video-bg-base:            transparentize($gray-darker, 0.4);
 $jumbotron-video-bg:                 linear-gradient(to right, transparentize($gray-darker, 0.1), transparentize($gray-darker, 0.9));
 $zindex-jumbotron-video:             -1010;
-
-
-// Fixed header
-
-$navbar-fixed-padding: 54px;

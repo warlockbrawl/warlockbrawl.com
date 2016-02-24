@@ -23,20 +23,18 @@ html(lang="en")
   body&attributes(app.bodyAttrs)
     div#app.app
       block app
-        nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-          block navigation
-            button.navbar-toggler.hidden-sm-up(type="button", data-toggle="collapse", data-target="#navbar") &#9776;
-            div.collapse.navbar-toggleable-xs#navbar
-              ul.nav.navbar-nav
+        header.navbar.navbar-light.navbar-static-top.app-navbar
+          block header
+            div.clearfix
+              button.navbar-toggler.pull-xs-right.hidden-sm-up(type="button", data-toggle="collapse", data-target="#main-nav") &#9776;
+              a.navbar-brand.hidden-sm-up(href="/")= app.name
+            div#main-nav.collapse.navbar-toggleable-xs
+              nav.navbar.navbar-nav
                 block navigation-links
-                  li.nav-item(class=(app.activeNav==='/'?'active':''))
-                    a.nav-link(href="/")= app.name
-                  li.nav-item(class=(app.activeNav==='/download'?'active':''))
-                    a.nav-link(href="/download") Download
-                  li.nav-item(class=(app.activeNav==='/faq'     ?'active':''))
-                    a.nav-link(href="/faq") FAQ
-                  li.nav-item(class=(app.activeNav==='/forums'  ?'active':''))
-                    a.nav-link(href="/forums") Forum
+                  a.nav-item.nav-link(class=(app.activeNav==='/'?'active':''), href="/")= app.name
+                  a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download") Download
+                  a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq") FAQ
+                  a.nav-item.nav-link(class=(app.activeNav==='/forums'  ?'active':''), href="/forums") Forum
 
         main#content.app-content
           block content
