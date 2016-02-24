@@ -1,5 +1,22 @@
+.app {
+  h2 {
+    margin-top: 3rem;
+  }
+}
+
 .app-navbar.app-navbar-bordered {
   border-bottom: 1px solid $gray-lighter;
+}
+
+.app-pageheader {
+  padding: 2rem 0;
+  color: $body-bg;
+  background-color: darken($brand-primary, 5%);
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(sm) {
+    padding: 4rem 0;
+  }
 }
 
 .app-footer {

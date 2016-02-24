@@ -450,7 +450,7 @@ $pager-disabled-color:                 $pagination-disabled-color !default;
 // Jumbotron
 
 $jumbotron-padding:              2rem !default;
-$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-bg:                   darken($brand-primary, 5%) !default;
 
 
 // Form states and alerts
