@@ -5,7 +5,7 @@ warlockbrawl.com
 
 This repository is the source code to the warlockbrawl.com website. It's mostly here for the team to collaborate
 on site content, but if you spot something feel free to submit a pull request or
-[open a issue](https://github.com/warlockbrawl/warlockbrawl.com/issues). A live version of the latest build can be found on http://latest.warlockbrawl.com.
+[open an issue](https://github.com/warlockbrawl/warlockbrawl.com/issues). A live version of the latest build can be found on http://latest.warlockbrawl.com.
 
 Building
 -------------------------------------
