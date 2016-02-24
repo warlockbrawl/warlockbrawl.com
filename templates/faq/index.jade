@@ -87,10 +87,8 @@ block content
 
     each category in faq
       section
-        span.adjusted-anchor(id= category.anchor)
-        h2.page-header= category.category
+        h2.page-header(id= category.anchor)= category.category
         each question in category.questions
-          dl
-            span.adjusted-anchor(id= category.anchor + '-' + question.anchor)
+          dl(id= category.anchor + '-' + question.anchor)
             dt!= question.question
             dd!= question.answer
