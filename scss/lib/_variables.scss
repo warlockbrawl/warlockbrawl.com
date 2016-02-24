@@ -373,9 +373,9 @@ $navbar-dark-hover-color:           rgba(255,255,255,.75) !default;
 $navbar-dark-active-color:          rgba(255,255,255,1) !default;
 $navbar-dark-disabled-color:        rgba(255,255,255,.25) !default;
 
-$navbar-light-color:                rgba(0,0,0,.3) !default;
-$navbar-light-hover-color:          rgba(0,0,0,.6) !default;
-$navbar-light-active-color:         rgba(0,0,0,.8) !default;
+$navbar-light-color:                transparentize(darken($brand-primary, 10%), .5) !default;
+$navbar-light-hover-color:          transparentize(darken($brand-primary, 10%), .25) !default;
+$navbar-light-active-color:         transparentize(darken($brand-primary, 15%), .15) !default;
 $navbar-light-disabled-color:       rgba(0,0,0,.15) !default;
 
 
@@ -669,6 +669,5 @@ $pre-scrollable-max-height:   340px !default;
 // Jumbotron video
 
 $jumbotron-video-color:              $gray-lighter;
-$jumbotron-video-bg-base:            transparentize($gray-dark, 0.4);
-$jumbotron-video-bg:                 linear-gradient(to right, transparentize($gray-dark, 0.1), transparentize($gray-dark, 0.9));
+$jumbotron-video-bg:                 transparentize($gray-dark, 0.4);
 $zindex-jumbotron-video:             -1010;
