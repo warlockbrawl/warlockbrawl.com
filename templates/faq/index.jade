@@ -86,8 +86,8 @@ block content
               li #[a(href="#" + category.anchor + '-' + question.anchor)!= question.question]
 
     each category in faq
-      section
-        h2.page-header(id= category.anchor)= category.category
+      section.m-t-3(id= category.anchor)
+        h2.page-header= category.category
         each question in category.questions
           dl(id= category.anchor + '-' + question.anchor)
             dt!= question.question
