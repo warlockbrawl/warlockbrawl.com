@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
 var connect = require('gulp-connect');
 
 var jade = require('gulp-jade');
@@ -18,7 +17,6 @@ var bowerDir = 'bower_components';
 
 gulp.task('templates', function() {
   return gulp.src('templates/**/*.jade')
-    .pipe(plumber())
     .pipe(jade({
       pretty: true
     }))
@@ -32,18 +30,14 @@ gulp.task('scripts', function() {
       bowerDir + '/jquery/dist/jquery.min.js',
       bowerDir + '/isMobile/isMobile.min.js',
 
-      //bowerDir + '/bootstrap/js/affix.js',
       bowerDir + '/bootstrap/js/dist/util.js',
       bowerDir + '/bootstrap/js/dist/collapse.js',
-      bowerDir + '/bootstrap/js/dist/scrollspy.js',
-      //bowerDir + '/bootstrap/js/transition.js',
 
       //bowerDir + '/moment/min/moment.min.js', While bootstrap-sortable depends on moment, it can do fine without it, as can we.
       bowerDir + '/bootstrap-sortable/Scripts/bootstrap-sortable.js',
 
       'js/**/*.js'
     ])
-    .pipe(plumber())
     .pipe(concat('app.js'))
     .pipe(gulp.dest('public/assets/js'))
     .pipe(connect.reload());
@@ -51,7 +45,6 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
   return gulp.src('scss/app.scss')
-    .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(rename('app.css'))
@@ -65,14 +58,14 @@ gulp.task('fonts', function() {
 });
 
 
-gulp.task('minify:scripts', ['scripts'], function() {
+gulp.task('scripts:minify', ['scripts'], function() {
   return gulp.src('public/assets/js/app.js')
     .pipe(uglify())
     .pipe(rename('app.min.js'))
     .pipe(gulp.dest('public/assets/js'));
 });
 
-gulp.task('minify:styles', ['styles'], function() {
+gulp.task('styles:minify', ['styles'], function() {
   return gulp.src('public/assets/css/app.css')
     .pipe(cssnano())
     .pipe(rename('app.min.css'))
@@ -95,5 +88,5 @@ gulp.task('connect', function() {
 });
 
 
-gulp.task('build', ['templates', 'minify:scripts', 'minify:styles', 'fonts']);
+gulp.task('build', ['templates', 'scripts:minify', 'styles:minify', 'fonts']);
 gulp.task('default', ['build', 'watch']);
