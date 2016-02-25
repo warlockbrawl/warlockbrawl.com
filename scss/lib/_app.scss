@@ -1,6 +1,7 @@
 .app {
   .jumbotron {
     text-align: center;
+    color: $body-bg;
 
     @include media-breakpoint-up(sm) {
       text-align: left;
