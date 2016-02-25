@@ -1,10 +1,18 @@
 .app {
-  .jumbotron h1 {
-    font-size: 3rem;
-    font-weight: 300;
-    
+  .jumbotron {
+    text-align: center;
+
     @include media-breakpoint-up(sm) {
-      font-size: 4.5rem;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      
+      @include media-breakpoint-up(sm) {
+        font-size: 4.5rem;
+      }
     }
   }
 }
