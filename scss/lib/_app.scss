@@ -9,7 +9,7 @@
 
     h1 {
       font-size: 3rem;
-      font-weight: 300;
+      font-weight: $display3-weight;
       
       @include media-breakpoint-up(sm) {
         font-size: 4.5rem;
@@ -35,12 +35,12 @@
   }
 
   h1 {
-    font-size: 2rem;
-    font-weight: 300;
+    font-size: 2.5rem;
+    font-weight: $display4-weight;
     margin-bottom: 0;
 
     @include media-breakpoint-up(sm) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 }
