@@ -1,14 +1,10 @@
 .app {
-  h2 {
-    margin-top: 2rem;
-  }
-
   .jumbotron h1 {
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 300;
     
-    @include media-breakpoint-down(xs) {
-      font-size: 3rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 4.5rem;
     }
   }
 }
