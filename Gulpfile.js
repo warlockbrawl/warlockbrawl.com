@@ -16,10 +16,15 @@ var bowerDir = 'bower_components';
 
 
 gulp.task('templates', function() {
+  var j = jade({
+    pretty: true
+  });
+  j.on('error', function(e) {
+    console.log(e);
+    j.end();
+  });
   return gulp.src('templates/**/[!_]*.jade')
-    .pipe(jade({
-      pretty: true
-    }))
+    .pipe(j)
     .pipe(gulp.dest('public/'))
     .pipe(connect.reload());
 });
