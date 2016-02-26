@@ -16,7 +16,7 @@ var bowerDir = 'bower_components';
 
 
 gulp.task('templates', function() {
-  return gulp.src('templates/**/*.jade')
+  return gulp.src('templates/**/[!_]*.jade')
     .pipe(jade({
       pretty: true
     }))
