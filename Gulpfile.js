@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
+var rev = require('gulp-rev');
+var runSequence = require('run-sequence'); // note: will no longer be necessary with gulp 4
+var revDel = require('rev-del');
 
 var jade = require('gulp-jade');
 
@@ -13,12 +16,25 @@ var cssnano = require('gulp-cssnano');
 
 var nodeDir = 'node_modules';
 var bowerDir = 'bower_components';
+var production = false;
 
 
 gulp.task('templates', function() {
-  var j = jade({
-    pretty: true
-  });
+  var j;
+  if (production)
+    j = jade({
+      pretty: true,
+      locals: {
+        rev: require('./public/assets/rev-manifest.json')
+      }
+    });
+  else
+    j = jade({
+      pretty: true,
+      locals: {
+        rev: false
+      }
+    });
   j.on('error', function(e) {
     console.log(e);
     j.end();
@@ -66,25 +82,41 @@ gulp.task('fonts', function() {
 gulp.task('scripts:minify', ['scripts'], function() {
   return gulp.src('public/assets/js/app.js')
     .pipe(uglify())
-    .pipe(rename('app.min.js'))
-    .pipe(gulp.dest('public/assets/js'));
+    .pipe(rev())
+    .pipe(gulp.dest('public/assets/js'))
+    .pipe(rev.manifest('public/assets/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(revDel({
+      oldManifest: 'public/assets/rev-manifest.json',
+      dest: 'public/assets/js'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('styles:minify', ['styles'], function() {
   return gulp.src('public/assets/css/app.css')
     .pipe(cssnano())
-    .pipe(rename('app.min.css'))
-    .pipe(gulp.dest('public/assets/css'));
+    .pipe(rev())
+    .pipe(gulp.dest('public/assets/css'))
+    .pipe(rev.manifest('public/assets/rev-manifest.json', {
+      merge: true
+    }))
+    .pipe(revDel({
+      oldManifest: 'public/assets/rev-manifest.json',
+      dest: 'public/assets/css'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 
-gulp.task('watch', ['connect'], function() {
+gulp.task('watch', function() {
   gulp.watch('templates/**/*.jade', ['templates']);
   gulp.watch('js/**/*.js', ['scripts']);
   gulp.watch('scss/**/*.scss', ['styles']);
 });
 
-gulp.task('connect', function() {
+gulp.task('server', ['watch'], function() {
   connect.server({
     port: 8888,
     root: 'public',
@@ -93,5 +125,12 @@ gulp.task('connect', function() {
 });
 
 
-gulp.task('build', ['templates', 'scripts:minify', 'styles:minify', 'fonts']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('build', ['scripts', 'styles', 'fonts', 'templates']);
+
+gulp.task('deploy', function(callback) {
+  production = true;
+  runSequence('scripts:minify', 'styles:minify', 'fonts', 'templates', callback);
+});
+
+
+gulp.task('default', ['build', 'server']);
