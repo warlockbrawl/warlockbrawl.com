@@ -1,0 +1,38 @@
+extends ../_app.jade
+
+block append config
+  -
+    var manual = {
+      breadcrumbs: [
+        {
+          url: '/manual',
+          title: 'Index',
+        }
+      ],
+      pageheader: 'Manual'
+    };
+
+    app.title = 'Manual - ' + app.title;
+    app.activeNav = '/manual';
+
+  block manual-config
+
+  -
+    app.borderedNav = !manual.pageheader;
+
+block content
+  if manual.pageheader
+    div.app-pageheader
+      div.container
+        h1= manual.pageheader
+
+  div.container
+    if manual.breadcrumbs
+      ol.breadcrumb(class= !manual.pageheader ? 'm-t-2' : '')
+        block breadcrumbs
+          - var activeCrumb = manual.breadcrumbs.pop();
+          each breadcrumb in manual.breadcrumbs
+            li #[a(href= breadcrumb.url)= breadcrumb.title]
+          li.active= activeCrumb.title
+
+    block manual-content
