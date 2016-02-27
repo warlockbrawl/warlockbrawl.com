@@ -1,0 +1,12 @@
+extends _installation.jade
+
+block append help-config
+  -
+    help.breadcrumbs.push({
+      title: 'Dota 2 quick start'
+    });
+    app.title = 'Dota 2 quick start - ' + app.title;
+
+block help-content
+  p.
+    

@@ -1,0 +1,12 @@
+extends _installation.jade
+
+block append help-config
+  -
+    help.breadcrumbs.push({
+      title: 'Warcraft III quick start'
+    });
+    app.title = 'Warcraft III quick start - ' + app.title;
+
+block help-content
+  p.
+    
