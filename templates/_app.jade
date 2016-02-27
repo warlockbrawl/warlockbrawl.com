@@ -24,7 +24,7 @@ html(lang="en")
   body&attributes(app.bodyAttrs)
     div#app.app
       block app
-        - var bordered = app.activeNav === undefined ? 'app-navbar-bordered' : '';
+        - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
         header.navbar.navbar-light.navbar-static-top.app-navbar(class= bordered)
           block header
             div.clearfix
