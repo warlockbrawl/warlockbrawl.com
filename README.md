@@ -19,5 +19,5 @@ The website is written in multiple different preprocessors and then built and as
 - ``npm install``
 - ``bower install``
 - ``gulp build``
-- ``gulp watch`` will start a local webserver, watch and livereload
-  your changes at http://localhost:8888/ (``gulp`` builds, then watches)
+- ``gulp server`` will start a local webserver, watch and livereload
+  your changes at http://localhost:8888/ (``gulp`` builds, then serves)

@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 var rev = require('gulp-rev');
-var runSequence = require('run-sequence'); // note: will no longer be necessary with gulp 4
 var revDel = require('rev-del');
+var runSequence = require('run-sequence'); // note: will no longer be necessary with gulp 4
 
 var jade = require('gulp-jade');
 
@@ -124,13 +124,12 @@ gulp.task('server', ['watch'], function() {
   });
 });
 
-
-gulp.task('build', ['scripts', 'styles', 'fonts', 'templates']);
-
 gulp.task('deploy', function(callback) {
   production = true;
   runSequence('scripts:minify', 'styles:minify', 'fonts', 'templates', callback);
 });
+
+gulp.task('build', ['scripts', 'styles', 'fonts', 'templates']);
 
 
 gulp.task('default', ['build', 'server']);
