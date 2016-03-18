@@ -5,8 +5,8 @@ block append config
     app.activeNav = '/';
 
 block content
-  div.jumbotron.jumbotron-fluid.jumbotron-video-container.jumbotron-video-static(data-jumbotron-video="d2warlock")
-    div.container
+  .jumbotron.jumbotron-fluid.jumbotron-video-container.jumbotron-video-static(data-jumbotron-video="d2warlock")
+    .container
       h1= app.name
       p.lead.
         Physics-based arena game concept. #[br]
@@ -14,20 +14,20 @@ block content
       p.lead
         a.btn.btn-primary.btn-lg(href="/dota", role="button") Play now &raquo;
 
-  div.container
-    div.row
-      div.col-sm-4
+  .container
+    .row
+      .col-sm-4
         include manual/index/_d2quickstart.jade
       hr.hidden-sm-up
-      div.col-sm-4
+      .col-sm-4
         include manual/index/_wc3quickstart.jade
       hr.hidden-sm-up
-      div.col-sm-4
+      .col-sm-4
         include manual/index/_howtoplay.jade
 
   hr
 
-  div.container
+  .container
     h2 Welcome to Warlock
     p.
       Warlock, or Warlock Brawl, is a game concept that has had incarnations spanning multiple platforms. Its most well-known is the #[a(href="https://en.wikipedia.org/wiki/Warcraft_III:_The_Frozen_Throne") Warcraft III] map, a mod for the 2003 Blizzard game, which underwent active development for over 6 years. Since July 2014, efforts by the original team to port the mod from this archaic platform to #[a(href="/dota") Dota 2] have been the primary focus for Warlock.

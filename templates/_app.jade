@@ -22,15 +22,15 @@ html(lang="en")
       block scripts
         script(src="/assets/js/#{rev['app.js']||'app.js'}")
   body&attributes(app.bodyAttrs)
-    div#app.app
+    #app.app
       block app
         - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
         header.navbar.navbar-light.navbar-static-top.app-navbar(class= bordered)
           block header
-            div.clearfix
+            .clearfix
               button.navbar-toggler.pull-xs-right.hidden-sm-up(type="button", data-toggle="collapse", data-target="#main-nav") &#9776;
               a.navbar-brand.hidden-sm-up(href="/")= app.name
-            div#main-nav.collapse.navbar-toggleable-xs
+            #main-nav.collapse.navbar-toggleable-xs
               nav.navbar.navbar-nav
                 block navigation-links
                   a.nav-item.nav-link.hidden-xs-down(class=(app.activeNav==='/'?'active':''), href="/")= app.name
@@ -44,7 +44,7 @@ html(lang="en")
 
         footer#footer.app-footer.text-muted
           block footer
-            div.container
+            .container
               ul.app-footer-links
                 block footer-links
                   li #[a(href="/contact") Contact]

@@ -22,11 +22,11 @@ block append config
 
 block content
   if manual.pageheader
-    div.app-pageheader
-      div.container
+    .app-pageheader
+      .container
         h1= manual.pageheader
 
-  div.container
+  .container
     if manual.breadcrumbs
       ol.breadcrumb(class= !manual.pageheader ? 'm-t-2' : '')
         block breadcrumbs
