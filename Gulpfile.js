@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
 var rev = require('gulp-rev');
-var revDel = require('rev-del');
 var runSequence = require('run-sequence'); // note: will no longer be necessary with gulp 4
 
 var jade = require('gulp-jade');
@@ -87,10 +86,6 @@ gulp.task('scripts:minify', ['scripts'], function() {
     .pipe(rev.manifest('public/assets/rev-manifest.json', {
       merge: true
     }))
-    .pipe(revDel({
-      oldManifest: 'public/assets/rev-manifest.json',
-      dest: 'public/assets/js'
-    }))
     .pipe(gulp.dest('./'));
 });
 
@@ -101,10 +96,6 @@ gulp.task('styles:minify', ['styles'], function() {
     .pipe(gulp.dest('public/assets/css'))
     .pipe(rev.manifest('public/assets/rev-manifest.json', {
       merge: true
-    }))
-    .pipe(revDel({
-      oldManifest: 'public/assets/rev-manifest.json',
-      dest: 'public/assets/css'
     }))
     .pipe(gulp.dest('./'));
 });
