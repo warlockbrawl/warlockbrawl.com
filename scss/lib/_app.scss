@@ -16,6 +16,18 @@
       }
     }
   }
+
+  .big-circle {
+    background-color: $link-color;
+    color: $body-bg;
+    border-radius: 50%;
+    padding: 0.8em;
+    font-size: $font-size-h3;
+  }
+
+  a:hover .big-circle {
+    background-color: $link-hover-color;
+  }
 }
 
 .app-navbar.app-navbar-bordered {

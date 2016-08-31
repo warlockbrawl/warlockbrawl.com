@@ -32,7 +32,7 @@ block content
         block breadcrumbs
           - var activeCrumb = manual.breadcrumbs.pop();
           each breadcrumb in manual.breadcrumbs
-            li #[a(href= breadcrumb.url)= breadcrumb.title]
-          li.active= activeCrumb.title
+            li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
+          li.breadcrumb-item.active= activeCrumb.title
 
     block manual-content

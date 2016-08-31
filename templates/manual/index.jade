@@ -2,18 +2,39 @@ extends _manual.jade
 
 block manual-content
   .row
+    .col-sm-8
+      h2 Main topics
+
+      .list-group.m-t-1
+        a.list-group-item.list-group-item-action(href="/manual/installation")
+          h3 #[i.fa.fa-plug] Installation
+        a.list-group-item.list-group-item-action(href="/manual/installation/d2.html")
+          h4 Dota 2 quick start
+        a.list-group-item.list-group-item-action(href="/manual/installation/wc3.html")
+          h4 Warcraft III quick start
+
+      .list-group.m-t-1
+        a.list-group-item.list-group-item-action(href="/manual/guide")
+          h3 #[i.fa.fa-gamepad] Game guide
+        a.list-group-item.list-group-item-action(href="/manual/guide/basics.html")
+          h4 Basics
+        a.list-group-item.list-group-item-action(href="/manual/guide/advanced.html")
+          h4 Advanced concepts
+
+      .list-group.m-t-1
+        a.list-group-item.list-group-item-action(href="/manual/handbook")
+          h3 #[i.fa.fa-book] Handbook
+        a.list-group-item.list-group-item-action(href="/manual/handbook/d2/spells")
+          h4 Dota 2 spells
+        a.list-group-item.list-group-item-action(href="/manual/handbook/d2/items")
+          h4 Dota 2 items
+        a.list-group-item.list-group-item-action(href="/manual/handbook/wc3/spells")
+          h4 Warcraft III spells
+        a.list-group-item.list-group-item-action(href="/manual/handbook/wc3/items")
+          h4 Warcraft III items
     .col-sm-4
-      include index/_installation.jade
-    hr.hidden-sm-up
-    .col-sm-4
-      include index/_gameguide.jade
-    hr.hidden-sm-up
-    .col-sm-4
-      include index/_handbook.jade
-    hr.hidden-sm-up
-  .row
-    .col-sm-6
-      include index/_faq.jade
-    hr.hidden-sm-up
-    .col-sm-6
-      include index/_contact.jade
+      h2 FAQ
+      p If you're looking for questions and answers, #[a(href="/faq") check the FAQ].
+
+      h2 Contact
+      p Still nothing? #[a(href="/contact") Hit us up].

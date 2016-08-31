@@ -2,11 +2,11 @@
   "name": "warlockbrawl",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
-    "jquery": "^2.2.0",
-    "moment": "^2.11.1",
-    "bootstrap-sortable": "^1.12.0",
-    "font-awesome": "fontawesome#^4.5.0",
-    "isMobile": "^0.3.9"
+    "bootstrap": "^4.0.0-alpha.3",
+    "jquery": "^2.2.4",
+    "moment": "^2.14.1",
+    "bootstrap-sortable": "^2.0.0",
+    "font-awesome": "fontawesome#^4.6.3",
+    "isMobile": "^0.4.1"
   }
 }

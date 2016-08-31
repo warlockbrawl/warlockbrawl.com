@@ -1,11 +1,13 @@
 /*!
- * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v4.0.0-alpha.3 (http://getbootstrap.com)
+ * Copyright 2011-2016 The Bootstrap Authors
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 // Core variables and mixins
-@import "variables";
+//@import "custom";
+//@import "variables";
 @import "../../bower_components/bootstrap/scss/mixins";
 
 // Reset and dependencies
@@ -16,10 +18,10 @@
 @import "../../bower_components/bootstrap/scss/reboot";
 @import "../../bower_components/bootstrap/scss/type";
 @import "../../bower_components/bootstrap/scss/images";
-//@import "../../bower_components/bootstrap/scss/code";
+//@import "code";
 @import "../../bower_components/bootstrap/scss/grid";
 @import "../../bower_components/bootstrap/scss/tables";
-//@import "../../bower_components/bootstrap/scss/forms";
+//@import "forms";
 @import "../../bower_components/bootstrap/scss/buttons";
 
 // Components
@@ -33,13 +35,12 @@
 //@import "card";
 @import "../../bower_components/bootstrap/scss/breadcrumb";
 //@import "pagination";
-//@import "pager";
-//@import "labels";
+//@import "tags";
 @import "../../bower_components/bootstrap/scss/jumbotron";
 //@import "alert";
 //@import "progress";
 //@import "media";
-//@import "list-group";
+@import "../../bower_components/bootstrap/scss/list-group";
 //@import "responsive-embed";
 //@import "close";
 
@@ -51,6 +52,4 @@
 
 // Utility classes
 @import "../../bower_components/bootstrap/scss/utilities";
-@import "../../bower_components/bootstrap/scss/utilities-background";
-@import "../../bower_components/bootstrap/scss/utilities-spacing";
-@import "../../bower_components/bootstrap/scss/utilities-responsive";
+

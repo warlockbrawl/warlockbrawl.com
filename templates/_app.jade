@@ -4,7 +4,12 @@ block config
       name: 'Warlock Brawl',
       title: 'Warlock Brawl',
       description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!',
-      bodyAttrs: {}
+      bodyAttrs: {},
+      links: {
+        steam: 'https://steamcommunity.com/groups/warlockbrawl',
+        discord: 'https://discord.gg/0vpPLl6xE2IyOpwG',
+        github: 'https://github.com/warlockbrawl'
+      }
     };
 
 doctype html
@@ -47,8 +52,8 @@ html(lang="en")
             .container
               ul.app-footer-links
                 block footer-links
-                  li #[a(href="/contact") Contact]
-                  li #[a(href="/faq") FAQ]
-                  li #[a(href="https://steamcommunity.com/groups/warlockbrawl") Steam]
-                  li #[a(href="https://github.com/warlockbrawl") GitHub]
+                  li #[a(href= app.links.steam) Steam]
+                  li #[a(href= app.links.discord) Discord]
+                  li #[a(href= app.links.github) GitHub]
+                  li #[a(href="/about") About]
               p &copy; 2008&ndash;2016 #{app.name}
