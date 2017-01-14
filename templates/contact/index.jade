@@ -7,25 +7,30 @@ block append config
 block content
   .container
     h2.m-t-2 Team
-    .row
-      .col-sm-3
-        strong Zymoran
-        em  co-creator, game designer
-        p.
-          #[a(href="mailto:zymoran@warlockbrawl.com") email]
-      .col-sm-3
-        strong Adynathos
-        em  aka Demestotenes: co-creator, developer
-        p.
-          #[a(href="mailto:adynathos@warlockbrawl.com") email]
-      .col-sm-3
-        strong ToraxXx
-        em  dota 2 lead, developer
-        p.
-          #[a(href="mailto:toraxxx@warlockbrawl.com") email]
-      .col-sm-3
-        strong sides
-        em  webmaster
-        p.
-          #[a(href="mailto:sides@warlockbrawl.com") email]
-
+    .card-deck
+        .card.team-card
+          .card-block
+            h4.card-title Zymoran
+            p.card-text Co-creator, game designer.
+          .card-block
+            a.card-link(data-mail="zymoran warlockbrawl com") Contact
+        .card.team-card
+          .card-block
+            h4.card-title Adynathos
+            p.card-text #[em aka Demestotenes.] Co-creator, developer.
+          .card-block
+            a.card-link(data-mail="adynathos gmail com") Contact
+        .card.team-card
+          .card-block
+            h4.card-title ToraxXx
+            p.card-text Dota 2 lead, developer.
+          .card-block
+            a.card-link(data-mail="toraxxx warlockbrawl com") Contact
+        .card.team-card
+          .card-block
+            h4.card-title sides
+            p.card-text Webmaster.
+          .card-block
+            a.card-link(data-mail="sides warlockbrawl com") Contact
+    p.
+      You can also catch most of us on the #[a(href= app.links.discord) Discord].

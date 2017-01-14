@@ -10,7 +10,7 @@
     h1 {
       font-size: 3rem;
       font-weight: $display3-weight;
-      
+
       @include media-breakpoint-up(sm) {
         font-size: 4.5rem;
       }
