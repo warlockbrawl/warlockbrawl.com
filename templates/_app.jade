@@ -24,8 +24,6 @@ html(lang="en")
       block styles
         link(rel="stylesheet", href="/assets/css/#{rev['app.css']||'app.css'}")
         link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic")
-      block scripts
-        script(src="/assets/js/#{rev['app.js']||'app.js'}")
   body&attributes(app.bodyAttrs)
     #app.app
       block app
@@ -57,3 +55,5 @@ html(lang="en")
                   li #[a(href= app.links.github) GitHub]
                   li #[a(href="/about") About]
               p &copy; 2008&ndash;2017 #{app.name}
+    block scripts
+        script(src="/assets/js/#{rev['app.js']||'app.js'}")
