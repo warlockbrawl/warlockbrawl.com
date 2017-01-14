@@ -2,7 +2,7 @@
   "name": "warlockbrawl",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.3",
+    "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^2.2.4",
     "moment": "^2.14.1",
     "bootstrap-sortable": "^2.0.0",

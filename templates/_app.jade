@@ -28,19 +28,21 @@ html(lang="en")
     #app.app
       block app
         - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
-        header.navbar.navbar-light.navbar-static-top.app-navbar(class= bordered)
+        header.navbar.navbar-light.navbar-toggleable-sm.app-navbar(class= bordered)
           block header
-            .clearfix
-              button.navbar-toggler.pull-xs-right.hidden-sm-up(type="button", data-toggle="collapse", data-target="#main-nav") &#9776;
-              a.navbar-brand.hidden-sm-up(href="/")= app.name
-            #main-nav.collapse.navbar-toggleable-xs
-              nav.navbar.navbar-nav
-                block navigation-links
-                  a.nav-item.nav-link.hidden-xs-down(class=(app.activeNav==='/'?'active':''), href="/")= app.name
-                  a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download") Download
-                  a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual") Manual
-                  a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq") FAQ
-                  a.nav-item.nav-link(class=(app.activeNav==='/forums'  ?'active':''), href="/forums") Forum
+            nav.container
+              .d-flex.justify-content-between.hidden-md-up
+                a.navbar-brand(href="/")= app.name
+                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#main-nav")
+                  i.fa.fa-navicon
+              #main-nav.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  block navigation-links
+                    a.nav-item.nav-link.hidden-sm-down(class=(app.activeNav==='/'?'active':''), href="/")= app.name
+                    a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download") Download
+                    a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual") Manual
+                    a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq") FAQ
+                    a.nav-item.nav-link(class=(app.activeNav==='/forums'  ?'active':''), href="/forums") Forum
 
         main#content.app-content
           block content

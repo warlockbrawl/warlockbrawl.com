@@ -8,7 +8,7 @@ block append config
 block content
   -
     var wburl = 'https://www.warlockbrawl.com';
-    
+
     var releases = [
       {
         title: '1.01b',
@@ -20,43 +20,43 @@ block content
         title: '1.01',
         changelog: wburl + '/forums/wc3-general-discussion/warlock-1-01-released',
         direct: wburl + '/forums/wc3-maps/warlock-1-01?action=dlattach;attach=338',
-        link: wburl + '/forums/wc3-maps/warlock-1-01' 
+        link: wburl + '/forums/wc3-maps/warlock-1-01'
       },
       {
         title: '1.00c',
         changelog: wburl + '/forums/wc3-general-discussion/warlock-1-00c-released',
         direct: wburl + '/forums/wc3-maps/warlock-1-00c?action=dlattach;attach=189',
-        link: wburl + '/forums/wc3-maps/warlock-1-00c' 
+        link: wburl + '/forums/wc3-maps/warlock-1-00c'
       },
       {
         title: '1.00b',
         changelog: wburl + '/forums/wc3-general-discussion/warlock-1-00b-released',
         direct: wburl + '/forums/wc3-maps/warlock-1-00b?action=dlattach;attach=188',
-        link: wburl + '/forums/wc3-maps/warlock-1-00b' 
+        link: wburl + '/forums/wc3-maps/warlock-1-00b'
       },
       {
         title: '1.00',
         changelog: wburl + '/archive/post/9201/warlock-100-released',
         direct: wburl + '/forums/wc3-maps/warlock-1-00?action=dlattach;attach=187',
-        link: wburl + '/forums/wc3-maps/warlock-1-00' 
+        link: wburl + '/forums/wc3-maps/warlock-1-00'
       },
       {
         title: '099c',
         changelog: wburl + '/archive/post/5753/warlock-099c-released',
         direct: wburl + '/forums/wc3-maps/warlock-099c?action=dlattach;attach=186',
-        link: wburl + '/forums/wc3-maps/warlock-099c' 
+        link: wburl + '/forums/wc3-maps/warlock-099c'
       },
       {
         title: '099b',
         changelog: wburl + '/archive/post/3990/warlock-099b-released',
         direct: wburl + '/forums/wc3-maps/warlock-099b?action=dlattach;attach=185',
-        link: wburl + '/forums/wc3-maps/warlock-099b' 
+        link: wburl + '/forums/wc3-maps/warlock-099b'
       },
       {
         title: '099',
         changelog: wburl + '/archive/post/2584/warlock-099-released',
         direct: wburl + '/forums/wc3-maps/warlock-099?action=dlattach;attach=184',
-        link: wburl + '/forums/wc3-maps/warlock-099' 
+        link: wburl + '/forums/wc3-maps/warlock-099'
       },
       {
         title: 'Older...',
@@ -107,7 +107,7 @@ block content
 
           tr
             td(colspan="2")
-              h3.m-t-3 #[i.fa.fa-wrench] Warcraft III tools
+              h3.mt-5 #[i.fa.fa-wrench] Warcraft III tools
 
           each tool in tools
             +download-row(tool)
