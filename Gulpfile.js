@@ -4,7 +4,7 @@ var connect = require('gulp-connect');
 var rev = require('gulp-rev');
 var runSequence = require('run-sequence'); // note: will no longer be necessary with gulp 4
 
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
@@ -19,27 +19,27 @@ var production = false;
 
 
 gulp.task('templates', function() {
-  var j;
+  var p;
   if (production)
-    j = jade({
+    p = pug({
       pretty: true,
       locals: {
         rev: require('./public/assets/rev-manifest.json')
       }
     });
   else
-    j = jade({
+    p = pug({
       pretty: true,
       locals: {
-        rev: false
+        rev: []
       }
     });
-  j.on('error', function(e) {
+  p.on('error', function(e) {
     console.log(e);
-    j.end();
+    p.end();
   });
-  return gulp.src('templates/**/[!_]*.jade')
-    .pipe(j)
+  return gulp.src('templates/**/[!_]*.pug')
+    .pipe(p)
     .pipe(gulp.dest('public/'))
     .pipe(connect.reload());
 });
@@ -102,7 +102,7 @@ gulp.task('styles:minify', ['styles'], function() {
 
 
 gulp.task('watch', function() {
-  gulp.watch('templates/**/*.jade', ['templates']);
+  gulp.watch('templates/**/*.pug', ['templates']);
   gulp.watch('js/**/*.js', ['scripts']);
   gulp.watch('scss/**/*.scss', ['styles']);
 });

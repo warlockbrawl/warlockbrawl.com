@@ -22,7 +22,7 @@ html(lang="en")
       meta(name="description", content= app.description)
       title= app.title
       block styles
-        link(rel="stylesheet", href="/assets/css/#{rev['app.css']||'app.css'}")
+        link(rel="stylesheet", href="/assets/css/" + (rev['app.css'] || 'app.css'))
         link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic")
   body&attributes(app.bodyAttrs)
     #app.app
@@ -58,4 +58,4 @@ html(lang="en")
                   li #[a(href="/about") About]
               p &copy; 2008&ndash;2017 #{app.name}
     block scripts
-        script(src="/assets/js/#{rev['app.js']||'app.js'}")
+        script(src="/assets/js/" + (rev['app.js'] || 'app.js'))
