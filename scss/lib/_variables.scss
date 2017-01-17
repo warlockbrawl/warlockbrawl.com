@@ -2,8 +2,8 @@
 //
 // Add custom variables/overwrite bootstrap's variables here.
 
-$brand-primary: #bc3232;
-$font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$brand-primary:               #bc3232;
+$font-family-sans-serif:      "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $navbar-light-color:          transparentize(darken($brand-primary, 10%), .5);
 $navbar-light-hover-color:    transparentize(darken($brand-primary, 10%), .25);
 $navbar-light-active-color:   transparentize(darken($brand-primary, 15%), .15);
