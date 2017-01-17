@@ -4,7 +4,6 @@
   height: 100%;
   overflow: hidden;
   background-color: $jumbotron-video-bg;
-  //box-shadow: inset 0px -5px 5px -5px black;
 
   &.jumbotron-video-static {
     background: linear-gradient(to right, $jumbotron-video-bg, $jumbotron-video-bg), url("../img/d2warlock.jpg") center center / cover no-repeat; // This more or less means there can only be one bg-video, but whatever.
