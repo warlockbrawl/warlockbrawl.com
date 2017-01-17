@@ -11,7 +11,7 @@
     }
   }
 
-  .big-circle {
+  .big-circle .fa {
     background-color: $link-color;
     color: $body-bg;
     border-radius: 50%;
@@ -19,8 +19,14 @@
     font-size: $font-size-h3;
   }
 
-  a:hover .big-circle {
+  a.big-circle:hover .fa {
     background-color: $link-hover-color;
+  }
+
+  a.big-circle h3 {
+    @include media-breakpoint-down(xs) {
+      font-size: $font-size-h4;
+    }
   }
 }
 
