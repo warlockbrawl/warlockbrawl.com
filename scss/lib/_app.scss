@@ -38,7 +38,7 @@
   padding: 1rem 0;
   text-align: center;
   color: $body-bg;
-  background-color: desaturate(lighten($brand-primary, 5%), 10%);
+  background-color: lighten($brand-primary, 5%);
   margin-bottom: 2rem;
 
   @include media-breakpoint-up(sm) {
