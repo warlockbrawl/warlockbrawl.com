@@ -26,13 +26,14 @@
 
 .app-navbar.app-navbar-bordered {
   border-bottom: 1px solid $gray-lighter;
+  margin-bottom: $spacer-y;
 }
 
 .app-pageheader {
-  padding: 1rem 0;
+  padding: $spacer-y 0;
   color: $body-bg;
   background-color: lighten($brand-primary, 5%);
-  margin-bottom: 2rem;
+  margin-bottom: $spacer-y;
 
   h1 {
     font-size: 2.5rem;
