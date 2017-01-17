@@ -1,15 +1,9 @@
 .app {
   .jumbotron {
-    text-align: center;
     color: $body-bg;
-
-    @include media-breakpoint-up(sm) {
-      text-align: left;
-    }
 
     h1 {
       font-size: 3rem;
-      font-weight: $display3-weight;
 
       @include media-breakpoint-up(sm) {
         font-size: 4.5rem;
@@ -36,19 +30,12 @@
 
 .app-pageheader {
   padding: 1rem 0;
-  text-align: center;
   color: $body-bg;
   background-color: lighten($brand-primary, 5%);
   margin-bottom: 2rem;
 
-  @include media-breakpoint-up(sm) {
-    padding: 1.5rem 0;
-    text-align: left;
-  }
-
   h1 {
     font-size: 2.5rem;
-    font-weight: $display4-weight;
     margin-bottom: 0;
 
     @include media-breakpoint-up(sm) {
