@@ -7,69 +7,57 @@ block append config
 
 block content
   -
-    var wburl = 'https://www.warlockbrawl.com';
-
     var releases = [
       {
         title: '1.01b',
-        changelog: wburl + '/forums/wc3-general-discussion/warlock-1-01b-released',
-        direct: wburl + '/forums/wc3-maps/warlock-1-01b?action=dlattach;attach=354',
-        link: wburl + '/forums/wc3-maps/warlock-1-01b'
+        changelog: app.links.forum + 'd/426-warlock-1-01b-released',
+        direct: '/files/wc3/Warlock1.01b.w3x'
       },
       {
         title: '1.01',
-        changelog: wburl + '/forums/wc3-general-discussion/warlock-1-01-released',
-        direct: wburl + '/forums/wc3-maps/warlock-1-01?action=dlattach;attach=338',
-        link: wburl + '/forums/wc3-maps/warlock-1-01'
+        changelog: app.links.forum + 'd/370-warlock-1-01-released',
+        direct: '/files/wc3/Warlock1.01.w3x'
       },
       {
         title: '1.00c',
-        changelog: wburl + '/forums/wc3-general-discussion/warlock-1-00c-released',
-        direct: wburl + '/forums/wc3-maps/warlock-1-00c?action=dlattach;attach=189',
-        link: wburl + '/forums/wc3-maps/warlock-1-00c'
+        changelog: app.links.forum + 'd/151-warlock-1-00c-released',
+        direct: '/files/wc3/Warlock1.00c.w3x'
       },
       {
         title: '1.00b',
-        changelog: wburl + '/forums/wc3-general-discussion/warlock-1-00b-released',
-        direct: wburl + '/forums/wc3-maps/warlock-1-00b?action=dlattach;attach=188',
-        link: wburl + '/forums/wc3-maps/warlock-1-00b'
+        changelog: app.links.forum + 'd/98-warlock-1-00b-released',
+        direct: '/files/wc3/Warlock1.00b.w3x'
       },
       {
         title: '1.00',
-        direct: wburl + '/forums/wc3-maps/warlock-1-00?action=dlattach;attach=187',
-        link: wburl + '/forums/wc3-maps/warlock-1-00'
+        direct: '/files/wc3/Warlock1.00.w3x',
       },
       {
         title: '099c',
-        direct: wburl + '/forums/wc3-maps/warlock-099c?action=dlattach;attach=186',
-        link: wburl + '/forums/wc3-maps/warlock-099c'
+        direct: '/files/wc3/Warlock099c.w3x',
       },
       {
         title: '099b',
-        direct: wburl + '/forums/wc3-maps/warlock-099b?action=dlattach;attach=185',
-        link: wburl + '/forums/wc3-maps/warlock-099b'
+        direct: '/files/wc3/Warlock099b.w3m',
       },
       {
         title: '099',
-        direct: wburl + '/forums/wc3-maps/warlock-099?action=dlattach;attach=184',
-        link: wburl + '/forums/wc3-maps/warlock-099'
+        direct: '/files/wc3/Warlock099.w3x'
       },
       {
         title: 'Older...',
-        link: wburl + '/forums/wc3-general-discussion/warlock-history'
+        link: app.links.forum + 'd/55-warlock-history'
       }
     ];
 
     var tools = [
       {
         title: 'Warlock Keys',
-        direct: wburl + '/forums/wc3-tools/warlock-keys?action=dlattach;attach=182',
-        link: wburl + '/forums/wc3-tools/warlock-keys',
+        direct: '/files/wc3/WarlockKeys.zip'
       },
       {
         title: 'Custom Terrain Editor',
-        direct: wburl + '/forums/wc3-tools/cte-(custom-terrain-editor)?action=dlattach;attach=183',
-        link: wburl + '/forums/wc3-tools/cte-(custom-terrain-editor)'
+        direct: '/files/wc3/CustomTerrainEditor.zip'
       }
     ];
 
