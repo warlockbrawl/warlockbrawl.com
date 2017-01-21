@@ -8,7 +8,8 @@ block config
       links: {
         steam: 'https://steamcommunity.com/groups/warlockbrawl',
         discord: 'https://discord.gg/pSEUr3T',
-        github: 'https://github.com/warlockbrawl'
+        github: 'https://github.com/warlockbrawl',
+        forum: 'https://forum.warlockbrawl.com/'
       }
     };
 
@@ -42,7 +43,7 @@ html(lang="en")
                     a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download") Download
                     a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual") Manual
                     a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq") FAQ
-                    a.nav-item.nav-link(class=(app.activeNav==='/forums'  ?'active':''), href="/forums") Forum
+                    a.nav-item.nav-link(href= app.links.forum) Forum
 
         main#content.app-content
           block content
