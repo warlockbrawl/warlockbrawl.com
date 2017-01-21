@@ -7,42 +7,44 @@ block append config
 
 block content
   -
+    var baseUrl = 'https://www.warlockbrawl.com';
+
     var releases = [
       {
         title: '1.01b',
         changelog: app.links.forum + 'd/426-warlock-1-01b-released',
-        direct: '/files/wc3/Warlock1.01b.w3x'
+        direct: baseUrl + '/files/wc3/Warlock1.01b.w3x'
       },
       {
         title: '1.01',
         changelog: app.links.forum + 'd/370-warlock-1-01-released',
-        direct: '/files/wc3/Warlock1.01.w3x'
+        direct: baseUrl + '/files/wc3/Warlock1.01.w3x'
       },
       {
         title: '1.00c',
         changelog: app.links.forum + 'd/151-warlock-1-00c-released',
-        direct: '/files/wc3/Warlock1.00c.w3x'
+        direct: baseUrl + '/files/wc3/Warlock1.00c.w3x'
       },
       {
         title: '1.00b',
         changelog: app.links.forum + 'd/98-warlock-1-00b-released',
-        direct: '/files/wc3/Warlock1.00b.w3x'
+        direct: baseUrl + '/files/wc3/Warlock1.00b.w3x'
       },
       {
         title: '1.00',
-        direct: '/files/wc3/Warlock1.00.w3x',
+        direct: baseUrl + '/files/wc3/Warlock1.00.w3x',
       },
       {
         title: '099c',
-        direct: '/files/wc3/Warlock099c.w3x',
+        direct: baseUrl + '/files/wc3/Warlock099c.w3x',
       },
       {
         title: '099b',
-        direct: '/files/wc3/Warlock099b.w3m',
+        direct: baseUrl + '/files/wc3/Warlock099b.w3m',
       },
       {
         title: '099',
-        direct: '/files/wc3/Warlock099.w3x'
+        direct: baseUrl + '/files/wc3/Warlock099.w3x'
       },
       {
         title: 'Older...',
@@ -53,11 +55,11 @@ block content
     var tools = [
       {
         title: 'Warlock Keys',
-        direct: '/files/wc3/WarlockKeys.zip'
+        direct: baseUrl + '/files/wc3/WarlockKeys.zip'
       },
       {
         title: 'Custom Terrain Editor',
-        direct: '/files/wc3/CustomTerrainEditor.zip'
+        direct: baseUrl + '/files/wc3/CustomTerrainEditor.zip'
       }
     ];
 
