@@ -1,6 +1,6 @@
 block config
   -
-    var app = {
+    let app = {
       name: 'Warlock Brawl',
       title: 'Warlock Brawl',
       description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!',
@@ -28,7 +28,7 @@ html(lang="en")
   body&attributes(app.bodyAttrs)
     #app.app
       block app
-        - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
+        - const bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
         header.navbar.navbar-light.navbar-toggleable-sm.app-navbar(class= bordered)
           block header
             nav.container

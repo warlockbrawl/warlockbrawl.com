@@ -2,7 +2,7 @@ extends ../_app
 
 block append config
   -
-    var manual = {
+    let manual = {
       breadcrumbs: [
         {
           url: '/manual',
@@ -30,7 +30,7 @@ block content
     if manual.breadcrumbs
       ol.breadcrumb(class= !manual.pageheader ? 'm-t-2' : '')
         block breadcrumbs
-          - var activeCrumb = manual.breadcrumbs.pop();
+          - const activeCrumb = manual.breadcrumbs.pop();
           each breadcrumb in manual.breadcrumbs
             li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
           li.breadcrumb-item.active= activeCrumb.title
