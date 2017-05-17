@@ -40,9 +40,9 @@ html(lang="en")
                 ul.nav.navbar-nav
                   block navigation-links
                     a.nav-item.nav-link.hidden-sm-down(class=(app.activeNav==='/'?'active':''), href="/")= app.name
-                    a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download") Download
-                    a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual") Manual
-                    a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq") FAQ
+                    a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download/") Download
+                    a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual/") Manual
+                    a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq/") FAQ
                     a.nav-item.nav-link(href= app.links.forum) Forum
 
         main#content.app-content
@@ -56,7 +56,7 @@ html(lang="en")
                   li #[a(href= app.links.steam) Steam]
                   li #[a(href= app.links.discord) Discord]
                   li #[a(href= app.links.github) GitHub]
-                  li #[a(href="/about") About]
+                  li #[a(href="/about/") About]
               p &copy; 2008&ndash;2017 #{app.name}
 
     block scripts
