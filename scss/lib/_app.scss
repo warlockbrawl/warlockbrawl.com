@@ -16,7 +16,7 @@
     color: $body-bg;
     border-radius: 50%;
     padding: 0.8em;
-    font-size: $font-size-h3;
+    font-size: $h3-font-size;
   }
 
   a.big-circle:hover .fa {
@@ -25,21 +25,21 @@
 
   a.big-circle h3 {
     @include media-breakpoint-down(xs) {
-      font-size: $font-size-h4;
+      font-size: $h4-font-size;
     }
   }
 }
 
 .app-navbar.app-navbar-bordered {
-  border-bottom: 1px solid $gray-lighter;
-  margin-bottom: $spacer-y;
+  border-bottom: 1px solid $gray-200;
+  margin-bottom: $spacer;
 }
 
 .app-pageheader {
-  padding: $spacer-y 0;
+  padding: $spacer 0;
   color: $body-bg;
-  background-color: lighten($brand-primary, 5%);
-  margin-bottom: $spacer-y;
+  background-color: lighten(theme-color("primary"), 5%);
+  margin-bottom: $spacer;
 
   h1 {
     font-size: 2.5rem;
@@ -52,14 +52,8 @@
 }
 
 .app-footer {
-  padding: 2rem 1rem;
-  background-color: $gray-lightest;
-  margin-top: 4rem;
+  background-color: $gray-100;
   font-size: 85%;
-
-  @include media-breakpoint-up(sm) {
-    padding: 4rem 1rem;
-  }
 
   .app-footer-links {
     padding-left: 0;
@@ -74,7 +68,7 @@
     }
 
     a {
-      color: $gray;
+      color: $gray-700;
     }
   }
 }

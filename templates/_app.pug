@@ -29,17 +29,15 @@ html(lang="en")
     #app.app
       block app
         - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
-        header.navbar.navbar-light.navbar-toggleable-sm.app-navbar(class= bordered)
+        header.navbar.navbar-light.navbar-expand-sm.app-navbar(class= bordered)
           block header
             nav.container
-              .d-flex.justify-content-between.hidden-md-up
-                a.navbar-brand(href="/")= app.name
-                button.navbar-toggler(type="button", data-toggle="collapse", data-target="#main-nav")
-                  span.navbar-toggler-icon
+              a.navbar-brand(href="/")= app.name
+              button.navbar-toggler(type="button", data-toggle="collapse", data-target="#main-nav")
+                span.navbar-toggler-icon
               #main-nav.collapse.navbar-collapse
                 ul.nav.navbar-nav
                   block navigation-links
-                    a.nav-item.nav-link.hidden-sm-down(class=(app.activeNav==='/'?'active':''), href="/")= app.name
                     a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download/") Download
                     a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual/") Manual
                     a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq/") FAQ
@@ -50,7 +48,7 @@ html(lang="en")
 
         footer#footer.app-footer.text-muted
           block footer
-            .container
+            .container.p-3.p-md-5
               ul.app-footer-links
                 block footer-links
                   li #[a(href= app.links.steam) Steam]
