@@ -70,7 +70,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  var styles = gulp.src('scss/app.scss')
+  return gulp.src('scss/app.scss')
     .pipe(sass().on('error', production ? failBuild : sass.logError))
     .pipe(autoprefixer())
     .pipe(rename('app.css'))
