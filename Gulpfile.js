@@ -18,6 +18,12 @@ var bowerDir = 'bower_components';
 var production = false;
 
 
+function failBuild(err) {
+  console.log(err);
+  return process.exit(2);
+}
+
+
 gulp.task('templates', function() {
   var pugTask;
 
@@ -123,16 +129,12 @@ gulp.task('server', ['watch'], function() {
 
 gulp.task('deploy', function(callback) {
   production = true;
-  runSequence('scripts:minify', 'styles:minify', 'fonts', 'templates', callback);
+  runSequence('scripts:minify', 'styles:minify', 'fonts', 'templates', function (err) {
+    return err ? failBuild(err) : callback();
+  });
 });
 
 gulp.task('build', ['scripts', 'styles', 'fonts', 'templates']);
 
 
 gulp.task('default', ['build', 'server']);
-
-
-function failBuild(err) {
-  console.log(err);
-  process.exit(2);
-}
