@@ -8,15 +8,13 @@ set -e # exit with nonzero exit code if anything fails
 gulp deploy
 
 cd public
-printf ${GH_CNAME} > CNAME
-printf "User-agent: * \nDisallow: /" > robots.txt
 git init
 
 git config user.name "travis-ci"
 git config user.email "travis@travis"
 
 git add .
-git commit -m "Deploy to GitHub Pages"
+git commit -m "Deploy static version"
 
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch
