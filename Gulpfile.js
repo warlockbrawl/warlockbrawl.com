@@ -19,27 +19,33 @@ var production = false;
 
 
 gulp.task('templates', function() {
-  var p;
-  if (production)
-    p = pug({
+  var pugTask;
+
+  if (production) {
+    pugTask = pug({
       pretty: true,
       locals: {
         rev: require('./public/assets/rev-manifest.json')
       }
     });
-  else
-    p = pug({
+
+    pugTask.on('error', failBuild);
+  } else {
+    pugTask = pug({
       pretty: true,
       locals: {
         rev: []
       }
     });
-  p.on('error', function(e) {
-    console.log(e);
-    p.end();
-  });
+
+    pugTask.on('error', function(err) {
+      console.log(err);
+      pugTask.end();
+    });
+  }
+
   return gulp.src('templates/**/[!_]*.pug')
-    .pipe(p)
+    .pipe(pugTask)
     .pipe(gulp.dest('public/'))
     .pipe(connect.reload());
 });
@@ -64,8 +70,8 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('scss/app.scss')
-    .pipe(sass().on('error', sass.logError))
+  var styles = gulp.src('scss/app.scss')
+    .pipe(sass().on('error', production ? failBuild : sass.logError))
     .pipe(autoprefixer())
     .pipe(rename('app.css'))
     .pipe(gulp.dest('public/assets/css'))
@@ -124,3 +130,9 @@ gulp.task('build', ['scripts', 'styles', 'fonts', 'templates']);
 
 
 gulp.task('default', ['build', 'server']);
+
+
+function failBuild(err) {
+  console.log(err);
+  process.exit(2);
+}
