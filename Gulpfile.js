@@ -14,7 +14,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 
 var nodeDir = 'node_modules';
-var bowerDir = 'bower_components';
 var production = false;
 
 
@@ -59,14 +58,13 @@ gulp.task('templates', function() {
 gulp.task('scripts', function() {
   return gulp.src([
 
-      bowerDir + '/jquery/dist/jquery.min.js',
-      bowerDir + '/isMobile/isMobile.min.js',
+      nodeDir + '/jquery/dist/jquery.min.js',
+      nodeDir + '/ismobilejs/isMobile.min.js',
 
-      bowerDir + '/bootstrap/js/dist/util.js',
-      bowerDir + '/bootstrap/js/dist/collapse.js',
+      nodeDir + '/bootstrap/js/dist/util.js',
+      nodeDir + '/bootstrap/js/dist/collapse.js',
 
-      //bowerDir + '/moment/min/moment.min.js', While bootstrap-sortable depends on moment, it can do fine without it, as can we.
-      bowerDir + '/bootstrap-sortable/Scripts/bootstrap-sortable.js',
+      nodeDir + '/bootstrap-sortable/Scripts/bootstrap-sortable.js',
 
       'js/**/*.js'
     ])
@@ -85,7 +83,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('fonts', function() {
-  return gulp.src(bowerDir + '/font-awesome/fonts/*')
+  return gulp.src(nodeDir + '/font-awesome/fonts/*')
     .pipe(gulp.dest('public/assets/fonts'));
 });
 
