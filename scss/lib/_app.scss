@@ -40,7 +40,7 @@
     h3 {
       margin-top: $spacer / 2;
 
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(md) {
         font-size: $h4-font-size;
       }
     }
