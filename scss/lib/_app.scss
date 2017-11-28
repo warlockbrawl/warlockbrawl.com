@@ -11,21 +11,38 @@
     }
   }
 
-  .big-circle .fa {
-    background-color: $link-color;
-    color: $body-bg;
-    border-radius: 50%;
-    padding: 0.8em;
-    font-size: $h3-font-size;
-  }
+  .big-circle {
+    .big-circle-icon {
+      display: inline-block;
+      background-color: $link-color;
+      color: $body-bg;
+      border-radius: 50%;
+      padding: $spacer;
+      line-height: 1;
 
-  a.big-circle:hover .fa {
-    background-color: $link-hover-color;
-  }
+      .fa {
+        font-size: $h2-font-size;
+      }
 
-  a.big-circle h3 {
-    @include media-breakpoint-down(xs) {
-      font-size: $h4-font-size;
+      svg {
+        width: $h2-font-size;
+        height: $h2-font-size;
+        max-height: 100%;
+      }
+    }
+
+    &:hover {
+      .big-circle-icon {
+        background-color: $link-hover-color;
+      }
+    }
+
+    h3 {
+      margin-top: $spacer / 2;
+
+      @include media-breakpoint-down(xs) {
+        font-size: $h4-font-size;
+      }
     }
   }
 }
