@@ -4,6 +4,9 @@ block append config
   -
     app.activeNav = '/';
 
+block append metatags
+  meta(name="description", content= app.description)
+
 block content
   .jumbotron.jumbotron-fluid.jumbotron-video-container.jumbotron-video-static(data-jumbotron-video="d2warlock")
     .container
