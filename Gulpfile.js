@@ -83,7 +83,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('fonts', function() {
-  return gulp.src(nodeDir + '/font-awesome/fonts/*')
+  return gulp.src(nodeDir + '/@fortawesome/fontawesome-free-webfonts/webfonts/*')
     .pipe(gulp.dest('public/assets/fonts'));
 });
 

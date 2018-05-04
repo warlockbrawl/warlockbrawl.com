@@ -1,0 +1,171 @@
+{
+  "rules": [
+  ],
+  "properties": [
+    {
+      "id": "warlock",
+      "type": "character",
+      "attributes": {
+        "name": "Warlock",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "scourge",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      },
+      "links": {
+        "grimoire": "https://www.warlockbrawl.com/grimoire/wc3/characters/warlock",
+        "icon": "https://www.warlockbrawl.com/grimoire/wc3/assets/icons/warlock.png"
+      }
+    },
+    {
+      "id": "heretic",
+      "attributes": {
+        "name": "Heretic",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "bane",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+    {
+      "id": "inquisitor",
+      "attributes": {
+        "name": "Inquisitor",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "redemption",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+    {
+      "id": "occultist",
+      "attributes": {
+        "name": "Occultist",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "ritual",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    }
+  ],
+  "objects": [
+
+    //
+    // Characters
+    {
+      "id": "warlock",
+      "type": "character",
+      "attributes": {
+        "name": "Warlock",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "scourge",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+    {
+      "id": "heretic",
+      "attributes": {
+        "name": "Heretic",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "bane",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+    {
+      "id": "inquisitor",
+      "attributes": {
+        "name": "Inquisitor",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "redemption",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+    {
+      "id": "occultist",
+      "attributes": {
+        "name": "Occultist",
+        "startingAbilities": [
+          {
+            "id": "fireball",
+            "level": 1
+          },
+          {
+            "id": "ritual",
+            "level": 1
+          }
+        ],
+        "startingMasteries": []
+      }
+    },
+
+    //
+    // Spells
+    {
+      "id": "fireball",
+      "attributes": {
+        "name": "Fireball",
+        "collisionTeams": ["enemy", "neutral"],
+        "collidesWith": ["standardObjects", "standardProjectiles"],
+        "levels": [
+          {
+            "damage": 7,
+            "knockback": 7,
+
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -72,33 +72,46 @@ block content
       td= download.title
       td
         if download.changelog
-          a(href= download.changelog) #[i.fa.fa-file-text-o]
+          a(href= download.changelog) #[i.fa.fa-file-alt.fa-fw] Changelog
         if download.direct
           if download.link
-            a(href= download.link) #[i.fa.fa-globe]
-          a(href= download.direct) #[i.fa.fa-download] #{download.link ? download.link : download.direct}
+            a(href= download.link) #[i.fa.fa-globe.fa-fw]
+          a(href= download.direct) #[i.fa.fa-download.fa-fw] #{download.link ? download.link : download.direct}
         else if download.link
-          a(href= download.link) #[i.fa.fa-globe] #{download.link}
+          a(href= download.link) #[i.fa.fa-globe.fa-fw] #{download.link}
 
   .app-pageheader
     .container
       h1 Downloads
 
   .container
+    h3 #[i.far.fa-map] Warcraft III maps
+    p
+      small.text-muted These require #[a(href="/manual/installation/wc3.html") Warcraft III] to play.
+
     .table-responsive
       table.table.table-sm.download-table
         tbody
-          tr
-            td(colspan="2")
-              h3 #[i.fa.fa-map] Warcraft III maps
-
           each release in releases
             +download-row(release)
 
-          tr
-            td(colspan="2")
-              h3.mt-3 #[i.fa.fa-wrench] Warcraft III tools
+    h3.mt-3 #[i.fa.fa-cog] Warcraft III tools
+    p
+      small.text-muted Tools that enable you to change the default hotkeys and create custom arenas.
 
+    .table-responsive
+      table.table.table-sm.download-table
+        tbody
           each tool in tools
             +download-row(tool)
+
+    h3.mt-3 Dota 2
+
+    .table-responsive
+      table.table.table-sm.download-table
+        tbody
+          +download-row({
+            title: 'Subscribe to the official mod',
+            link: 'https://www.warlockbrawl.com/dota/'
+          })
 
