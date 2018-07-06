@@ -73,7 +73,7 @@
 .app-pageheader {
   padding: $spacer 0;
   color: $body-bg;
-  background-color: lighten(theme-color("primary"), 5%);
+  background-color: theme-color("primary");
   margin-bottom: $spacer;
 
   h1 {
