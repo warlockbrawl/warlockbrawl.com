@@ -59,7 +59,7 @@ gulp.task('scripts', function() {
   return gulp.src([
 
       nodeDir + '/jquery/dist/jquery.min.js',
-      nodeDir + '/ismobilejs/isMobile.min.js',
+      nodeDir + '/ismobilejs/dist/isMobile.min.js',
 
       nodeDir + '/bootstrap/js/dist/util.js',
       nodeDir + '/bootstrap/js/dist/collapse.js',
