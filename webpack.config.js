@@ -41,10 +41,6 @@ const config = {
         ]
       },
       {
-        test: /\.svg$/,
-        use: 'svg-inline-loader'
-      },
-      {
         test: /\.(png|jpg|gif|webm|mp4)$/,
         use: [
           {
