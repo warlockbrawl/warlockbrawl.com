@@ -5,7 +5,7 @@ set -e # exit with nonzero exit code if anything fails
 #rm -rf public || exit 0; the public dir should already exist (containing images/videos only)
 #mkdir public;
 
-gulp deploy
+npm run build
 
 cd public
 git init

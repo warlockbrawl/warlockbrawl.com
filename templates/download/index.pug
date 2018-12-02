@@ -72,20 +72,20 @@ block content
       td= download.title
       td
         if download.changelog
-          a(href= download.changelog) #[i.fa.fa-file-alt.fa-fw] Changelog
+          a(href= download.changelog) #[+icon('fileAlt').icon-fw] Changelog
         if download.direct
           if download.link
-            a(href= download.link) #[i.fa.fa-globe.fa-fw]
-          a(href= download.direct) #[i.fa.fa-download.fa-fw] #{download.link ? download.link : download.direct}
+            a(href= download.link) #[+icon('globe').icon-fw]
+          a(href= download.direct) #[+icon('download').icon-fw] #{download.link ? download.link : download.direct}
         else if download.link
-          a(href= download.link) #[i.fa.fa-globe.fa-fw] #{download.link}
+          a(href= download.link) #[+icon('globe').icon-fw] #{download.link}
 
   .app-pageheader
     .container
       h1 Downloads
 
   .container
-    h3 #[i.far.fa-map] Warcraft III maps
+    h3 #[+icon('map', 'regular')] Warcraft III maps
     p
       small.text-muted These require #[a(href="/manual/installation/wc3.html") Warcraft III] to play.
 
@@ -95,7 +95,7 @@ block content
           each release in releases
             +download-row(release)
 
-    h3.mt-3 #[i.fa.fa-cog] Warcraft III tools
+    h3.mt-3 #[+icon('cog')] Warcraft III tools
     p
       small.text-muted Tools that enable you to change the default hotkeys and create custom arenas.
 

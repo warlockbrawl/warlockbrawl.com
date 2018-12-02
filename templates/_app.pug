@@ -13,6 +13,17 @@ block config
       }
     };
 
+mixin icon(name, type='solid')
+  -
+    icon = require(`@fortawesome/free-${type}-svg-icons/fa${name.charAt(0).toUpperCase() + name.slice(1)}.js`)
+    cls = `icon icon-${icon.iconName}${attributes.class ? ' ' + attributes.class : ''}`
+    attributes.class = ''
+  svg(
+    xmlns="http://www.w3.org/2000/svg",
+    viewBox= `0 0 ${icon.width} ${icon.height}`,
+    class= cls)&attributes(attributes)
+    path(fill="currentColor", d= icon.svgPathData)
+
 doctype html
 html(lang="en")
   head
@@ -23,7 +34,6 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1")
       title= app.title
       block styles
-        link(rel="stylesheet", href="/assets/css/" + (rev['app.css'] || 'app.css'))
         link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic")
   body&attributes(app.bodyAttrs)
     #app.app
@@ -57,6 +67,3 @@ html(lang="en")
                   li #[a(href= app.links.github) GitHub]
                   li #[a(href="/about/") About]
               p &copy; 2008&ndash;2018 #{app.name}
-
-    block scripts
-        script(src="/assets/js/" + (rev['app.js'] || 'app.js'))

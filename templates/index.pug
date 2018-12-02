@@ -8,7 +8,8 @@ block append metatags
   meta(name="description", content= app.description)
 
 block content
-  .jumbotron.jumbotron-fluid.jumbotron-video-container.jumbotron-video-static(data-jumbotron-video="d2warlock")
+  .jumbotron.jumbotron-fluid.jumbotron-video-container.jumbotron-video-static(
+    data-jumbotron-video= `<video class="jumbotron-video" loop muted autoplay poster="${require('../assets/d2warlock.jpg')}"><source src="${require('../assets/d2warlock.mp4')}" type="video/webm"></source><source src="${require('../assets/d2warlock.webm')}" type="video/mp4"></source></video>`)
     .container
       h1= app.name
       .no-gutters

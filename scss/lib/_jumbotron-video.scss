@@ -6,7 +6,7 @@
   background-color: $jumbotron-video-bg;
 
   &.jumbotron-video-static {
-    background: linear-gradient(to right, $jumbotron-video-bg, $jumbotron-video-bg), url("../img/d2warlock.jpg") center center / cover no-repeat; // This more or less means there can only be one bg-video, but whatever.
+    background: linear-gradient(to right, $jumbotron-video-bg, $jumbotron-video-bg), url("../assets/d2warlock.jpg") center center / cover no-repeat; // This more or less means there can only be one bg-video, but whatever.
   }
 
   .jumbotron-video {
