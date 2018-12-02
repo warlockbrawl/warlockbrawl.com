@@ -10,13 +10,9 @@ on site content, but if you spot something feel free to submit a pull request or
 Building
 -------------------------------------
 
-The website is written in multiple different preprocessors and then built and assembled with gulp.
-
 - Have [node + npm](https://nodejs.org/) installed
-- ``npm install -g gulp``
 - ``git clone https://github.com/warlockbrawl/warlockbrawl.com.git``
 - ``cd warlockbrawl.com``
 - ``npm install``
-- ``gulp build``
-- ``gulp server`` will start a local webserver, watch and livereload
-  your changes at http://localhost:8888/ (``gulp`` builds, then serves)
+- ``npm run start`` will start a local webserver, watch and livereload
+  your changes at http://localhost:8888/
