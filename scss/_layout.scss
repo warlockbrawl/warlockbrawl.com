@@ -9,22 +9,6 @@
         font-size: 4.5rem;
       }
     }
-
-    /* Uncomment for multiple buttons
-    .jumbotron-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      margin: -($spacer / 4);
-
-      .btn {
-        flex: 0 1 auto;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin: ($spacer / 4);
-      }
-    }
-    */
   }
 
   .big-circle {
@@ -35,12 +19,6 @@
       border-radius: 50%;
       padding: $spacer * 1.5;
       line-height: 1;
-
-      i {
-        font-size: $h2-font-size;
-        width: $h2-font-size;
-        height: $h2-font-size;
-      }
 
       svg {
         width: $h2-font-size;
