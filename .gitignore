@@ -1,10 +1,5 @@
 node_modules
-bower_components
+public/
 
+.vscode/
 *.sublime-*
-
-!public/
-public/*
-!public/assets/
-public/assets/*
-!public/assets/img/
