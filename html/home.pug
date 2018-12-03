@@ -1,9 +1,5 @@
 extends ./layouts/app
 
-block append config
-  -
-    app.activeNav = '/';
-
 block append metatags
   meta(name="description", content= app.description)
 
@@ -16,7 +12,7 @@ block content
         p.col-md-6.lead.
           The veteran physics-based arena Warcraft 3 map and Dota 2 custom game.
         p.lead.jumbotron-buttons
-          a.btn.btn-primary.btn-lg.mr-2(href="/manual/installation/wc3.html", role="button") Play in WC3
+          a.btn.btn-primary.btn-lg.mr-2(href= app.route('handbook/warcraft-3'), role="button") Play in WC3
           a.btn.btn-primary.btn-lg(href="/dota/", role="button") Play in Dota 2
 
   .container.mb-5
@@ -24,7 +20,7 @@ block content
     p.
       Warlock, or Warlock Brawl, is a game concept that has had incarnations spanning multiple platforms. Its most well known is the #[a(href="https://en.wikipedia.org/wiki/Warcraft_III:_The_Frozen_Throne") Warcraft III] map, a mod for the 2003 Blizzard game, which underwent active development for over six years. In 2014, the mod was ported by the original team to #[a(href="/dota/") Dota 2] which was the focus for Warlock for around two years.
     p.
-      As well as modifications of other games, Warlock has existed as a #[a(href="/about/standalones.html") myriad of standalone game projects] typically started by indie developers inspired by the WC3 map. There is currently an official standalone project in development, lead by original co-creator Adynathos.
+      As well as modifications of other games, Warlock has existed as a #[a(href= app.route('standalones')) myriad of standalone game projects] typically started by indie developers inspired by the WC3 map. There is currently an official standalone project in development, lead by original co-creator Adynathos.
 
   hr
 

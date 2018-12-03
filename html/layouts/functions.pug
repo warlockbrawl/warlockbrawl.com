@@ -1,4 +1,16 @@
 -
+  locals.route = function(file) {
+    if (!index[file]) {
+      throw new Error(`Invalid route: ${file}`);
+    }
+
+    url = index[file];
+
+    return url.endsWith('index')
+      ? '/' + url.slice(0, -5)
+      : '/' + url + '.html';
+  };
+
   locals.urlify = function(t) {
     return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-  }
+  };

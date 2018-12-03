@@ -7,55 +7,49 @@ block config
       name: 'Warlock Brawl',
       title: 'Warlock Brawl',
       description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!',
-      bodyAttrs: {},
       links: {
         steam: 'https://steamcommunity.com/groups/warlockbrawl',
         discord: 'https://discord.gg/pSEUr3T',
         github: 'https://github.com/warlockbrawl',
         forum: 'https://forum.warlockbrawl.com/'
-      }
+      },
+      borderedNav: !['home', 'download', 'faq'].includes(locals.currentRoute),
+      bodyAttrs: {}
     };
+
+    Object.assign(app, locals);
 
 doctype html
 html(lang="en")
   head
-    block head
-      block metatags
-        meta(charset="utf-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
+    block metatags
+      meta(charset="utf-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
       title= app.title
-      block styles
-        link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic")
+      link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic")
   body&attributes(app.bodyAttrs)
     #app.app
-      block app
-        - const bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
-        header.navbar.navbar-light.navbar-expand-sm.app-navbar(class= bordered)
-          block header
-            nav.container
-              a.navbar-brand(href="/")= app.name
-              button.navbar-toggler(type="button", data-toggle="collapse", data-target="#main-nav")
-                span.navbar-toggler-icon
-              #main-nav.collapse.navbar-collapse
-                ul.nav.navbar-nav
-                  block navigation-links
-                    a.nav-item.nav-link(class=(app.activeNav==='/download'?'active':''), href="/download/") Download
-                    //a.nav-item.nav-link(class=(app.activeNav==='/manual'  ?'active':''), href="/manual/") Manual
-                    a.nav-item.nav-link(class=(app.activeNav==='/faq'     ?'active':''), href="/faq/") FAQ
-                    a.nav-item.nav-link(href= app.links.discord) Discord
-                    a.nav-item.nav-link(href= app.links.forum) Forum
+      header.navbar.navbar-light.navbar-expand-sm.app-navbar(class= app.borderedNav ? 'app-navbar-bordered' : '')
+        nav.container
+          a.navbar-brand(href= app.route('home'))= app.name
+          button.navbar-toggler(type="button", data-toggle="collapse", data-target="#main-nav")
+            span.navbar-toggler-icon
+          #main-nav.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              a.nav-item.nav-link(class=(app.currentRoute==='download'?'active':''), href= app.route('download')) Download
+              a.nav-item.nav-link(class=(app.currentRoute==='faq'     ?'active':''), href= app.route('faq')) FAQ
+              a.nav-item.nav-link(href= app.links.discord) Discord
+              a.nav-item.nav-link(href= app.links.forum) Forum
 
-        main#content.app-content
-          block content
+      main#content.app-content
+        block content
 
-        footer#footer.app-footer.text-muted
-          block footer
-            .container.p-3.p-md-5
-              ul.app-footer-links
-                block footer-links
-                  li #[a(href= app.links.steam) Steam]
-                  li #[a(href= app.links.discord) Discord]
-                  li #[a(href= app.links.github) GitHub]
-                  li #[a(href="/about/") About]
-              p &copy; 2008&ndash;2018 #{app.name}
+      footer#footer.app-footer.text-muted
+        .container.p-3.p-md-5
+          ul.app-footer-links
+            li #[a(href= app.links.steam) Steam]
+            li #[a(href= app.links.discord) Discord]
+            li #[a(href= app.links.github) GitHub]
+            li #[a(href= app.route('about')) About]
+          p &copy; 2008&ndash;2018 #{app.name}

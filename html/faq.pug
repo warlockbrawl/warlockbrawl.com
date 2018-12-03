@@ -3,7 +3,6 @@ extends ./layouts/app
 block append config
   -
     app.title = 'FAQ - ' + app.title;
-    app.activeNav = '/faq';
 
 block content
   -
@@ -30,11 +29,11 @@ block content
         questions: [
           {
             question: 'Where can I play WC3 Warlock?',
-            answer: '<a href="/manual/installation/wc3.html">Battle.net, ICCup, RGC and Eurobattle.net</a> are commonly used clients, but <a href="#warcraft-iii-is-warlock-still-active">don\'t expect much activity</a>. We recommend <a href="' + app.links.discord + '">joining the Discord</a> to find other players.'
+            answer: '<a href="' + app.route('handbook/warcraft-3') + '">Battle.net, ICCup, RGC and Eurobattle.net</a> are commonly used clients, but <a href="#warcraft-iii-is-warlock-still-active">don\'t expect much activity</a>. We recommend <a href="' + app.links.discord + '">joining the Discord</a> to find other players.'
           },
           {
             question: 'Where can I get the latest version?',
-            answer: 'The latest version can be found <a href="/download/">here</a>, on <a href="http://www.hiveworkshop.com/forums/maps-564/warlock-92687/" target="_blank">Hiveworkshop</a> or on epicwar.com.'
+            answer: 'The latest version can be found <a href="' + app.route('download') + '">here</a>, on <a href="http://www.hiveworkshop.com/forums/maps-564/warlock-92687/" target="_blank">Hiveworkshop</a> or on epicwar.com.'
           },
           {
             question: 'Is Warlock still active?',
@@ -82,11 +81,11 @@ block content
     h2 Contents
     ul
       each category in faq
-        - category.anchor = locals.urlify(category.category);
+        - category.anchor = app.urlify(category.category);
         li #[a(href="#" + category.anchor)= category.category]
           ul
             each question in category.questions
-              - question.anchor = locals.urlify(question.question)
+              - question.anchor = app.urlify(question.question)
               li #[a(href="#" + category.anchor + '-' + question.anchor)!= question.question]
 
     each category in faq
