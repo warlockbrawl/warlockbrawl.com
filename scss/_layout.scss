@@ -1,44 +1,42 @@
-.app {
-  .jumbotron {
+.jumbotron {
+  color: $body-bg;
+
+  h1 {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+.big-circle {
+  .big-circle-icon {
+    display: inline-block;
+    background-color: $link-color;
     color: $body-bg;
+    border-radius: 50%;
+    padding: $spacer * 1.5;
+    line-height: 1;
 
-    h1 {
-      font-size: 3rem;
-
-      @include media-breakpoint-up(sm) {
-        font-size: 4.5rem;
-      }
+    svg {
+      width: $h2-font-size;
+      height: $h2-font-size;
+      max-height: 100%;
     }
   }
 
-  .big-circle {
+  &:hover {
     .big-circle-icon {
-      display: inline-block;
-      background-color: $link-color;
-      color: $body-bg;
-      border-radius: 50%;
-      padding: $spacer * 1.5;
-      line-height: 1;
-
-      svg {
-        width: $h2-font-size;
-        height: $h2-font-size;
-        max-height: 100%;
-      }
+      background-color: $link-hover-color;
     }
+  }
 
-    &:hover {
-      .big-circle-icon {
-        background-color: $link-hover-color;
-      }
-    }
+  h3 {
+    margin-top: $spacer / 2;
 
-    h3 {
-      margin-top: $spacer / 2;
-
-      @include media-breakpoint-down(md) {
-        font-size: $h4-font-size;
-      }
+    @include media-breakpoint-down(md) {
+      font-size: $h4-font-size;
     }
   }
 }
