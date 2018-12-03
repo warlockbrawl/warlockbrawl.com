@@ -28,21 +28,20 @@ block content
   .container
     if handbook.breadcrumbs
       ol.breadcrumb(class= !handbook.pageheader ? 'mt-2' : '')
-        block breadcrumbs
-          - const activeCrumb = handbook.breadcrumbs.pop();
-          each breadcrumb in handbook.breadcrumbs
-            li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
-          li.breadcrumb-item.active= activeCrumb.title
+        - const activeCrumb = handbook.breadcrumbs.pop();
+        each breadcrumb in handbook.breadcrumbs
+          li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
+        li.breadcrumb-item.active= activeCrumb.title
 
     block handbook-content
 
     if handbook.editLink
       .mt-5.text-right
-        if handbook.editLink.startsWith('https://') || handbook.editLink.startsWith('http://')
-          a(href=handbook.editLink, target="_blank") Edit this article
-            span.text-muted.ml-1
-              +icon('externalLinkAlt')
-        else
-          a(href=`${app.links.github}/warlockbrawl.com/edit/master/${handbook.editLink}`, target="_blank") Edit this article
-            span.text-muted.ml-1
-              +icon('externalLinkAlt')
+        -
+          const url = handbook.editLink.startsWith('https://') || handbook.editLink.startsWith('http://')
+            ? handbook.editLink
+            : `${app.links.github}/warlockbrawl.com/edit/master/${handbook.editLink}`
+
+        a(href=url, target="_blank") Edit this article
+          span.text-muted.ml-1
+            +icon('externalLinkAlt')

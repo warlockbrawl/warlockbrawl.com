@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server -d",
-    "dev": "webpack -d",
     "build": "webpack -p"
   },
   "devDependencies": {
