@@ -1,4 +1,4 @@
-extends ../_app
+extends ./layouts/app
 
 block append config
   -
@@ -7,7 +7,7 @@ block append config
 
 block content
   -
-    var faq = [
+    const faq = [
       {
         category: 'Dota 2',
         questions: [
@@ -74,10 +74,6 @@ block content
       }
     ];
 
-    function urlify(t) {
-      return t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    }
-
   .app-pageheader
     .container
       h1 Frequently asked questions
@@ -86,11 +82,11 @@ block content
     h2 Contents
     ul
       each category in faq
-        - category.anchor = urlify(category.category);
+        - category.anchor = locals.urlify(category.category);
         li #[a(href="#" + category.anchor)= category.category]
           ul
             each question in category.questions
-              - question.anchor = urlify(question.question)
+              - question.anchor = locals.urlify(question.question)
               li #[a(href="#" + category.anchor + '-' + question.anchor)!= question.question]
 
     each category in faq

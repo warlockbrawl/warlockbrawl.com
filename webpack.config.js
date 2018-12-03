@@ -3,15 +3,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const pages = [
-  'index',
-  'about/index',
-  'about/standalones',
-  'contact/index',
-  'download/index',
-  'faq/index',
-  'manual/installation/wc3'
-];
+const index = require('./html/index.json');
 
 const config = {
   entry: ['./js/app.js'],
@@ -58,9 +50,9 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
-  plugins: pages.map(page => new HtmlWebpackPlugin({
-    filename: page + '.html',
-    template: './templates/' + page + '.pug',
+  plugins: Object.keys(index).map(page => new HtmlWebpackPlugin({
+    filename: index[page] + '.html',
+    template: './html/' + page + '.pug',
     inject: true
   }))
 };

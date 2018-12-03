@@ -1,4 +1,4 @@
-extends ../_app
+extends ./layouts/app
 
 block append config
   -
@@ -7,9 +7,9 @@ block append config
 
 block content
   -
-    var baseUrl = 'https://www.warlockbrawl.com';
+    const baseUrl = 'https://www.warlockbrawl.com';
 
-    var releases = [
+    const releases = [
       {
         title: '1.02',
         direct: baseUrl + '/files/wc3/Warlock1.02.w3x'
@@ -56,7 +56,7 @@ block content
       }
     ];
 
-    var tools = [
+    const tools = [
       {
         title: 'Warlock Keys',
         direct: baseUrl + '/files/wc3/WarlockKeys.zip'

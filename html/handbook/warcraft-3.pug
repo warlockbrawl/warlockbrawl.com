@@ -1,15 +1,15 @@
-extends _installation
+extends ../layouts/handbook
 
-block append manual-config
+block append handbook-config
   -
-    manual.breadcrumbs.push({
+    handbook.breadcrumbs.push({
       title: 'Warcraft III quick start'
     });
-    manual.breadcrumbs = false;
-    manual.pageheader = 'Warcraft III quick start'
+    handbook.breadcrumbs = false;
+    handbook.pageheader = 'Warcraft III quick start'
     app.title = 'Warcraft III quick start - ' + app.title;
 
-block manual-content
+block handbook-content
   h2 Prerequisites
   p.
     In order to play Warlock, you must have Warcraft III: The Frozen Throne installed on your computer. You can purchase it by buying #[a(href="https://playwarcraft3.com/en-us/") Warcraft III: Reforged] which will get you the download for the game client. Alternatively, if you still have old CD keys lying around, you can add them to your #[a(href="https://battle.net/account/") battle.net] account for the same effect.

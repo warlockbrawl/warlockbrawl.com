@@ -1,6 +1,9 @@
+include ./functions
+include ./mixins
+
 block config
   -
-    var app = {
+    const app = {
       name: 'Warlock Brawl',
       title: 'Warlock Brawl',
       description: 'The official website for the Dota 2 and Warcraft 3 mod, Warlock, and the upcoming standalone. Discuss updates on our forums, play in tournaments, and more!',
@@ -12,17 +15,6 @@ block config
         forum: 'https://forum.warlockbrawl.com/'
       }
     };
-
-mixin icon(name, type='solid')
-  -
-    icon = require(`@fortawesome/free-${type}-svg-icons/fa${name.charAt(0).toUpperCase() + name.slice(1)}.js`)
-    cls = `icon icon-${icon.iconName}${attributes.class ? ' ' + attributes.class : ''}`
-    attributes.class = ''
-  svg(
-    xmlns="http://www.w3.org/2000/svg",
-    viewBox= `0 0 ${icon.width} ${icon.height}`,
-    class= cls)&attributes(attributes)
-    path(fill="currentColor", d= icon.svgPathData)
 
 doctype html
 html(lang="en")
@@ -38,7 +30,7 @@ html(lang="en")
   body&attributes(app.bodyAttrs)
     #app.app
       block app
-        - var bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
+        - const bordered = app.borderedNav || app.activeNav === undefined ? 'app-navbar-bordered' : '';
         header.navbar.navbar-light.navbar-expand-sm.app-navbar(class= bordered)
           block header
             nav.container

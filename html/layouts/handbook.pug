@@ -1,0 +1,38 @@
+extends ./app
+
+block append config
+  -
+    const handbook = {
+      breadcrumbs: [
+        {
+          url: '/handbook/',
+          title: 'Index',
+        }
+      ],
+      pageheader: 'Handbook'
+    };
+
+    app.title = 'Handbook - ' + app.title;
+    app.activeNav = '/handbook';
+
+  block handbook-config
+
+  -
+    app.borderedNav = !handbook.pageheader;
+
+block content
+  if handbook.pageheader
+    .app-pageheader
+      .container
+        h1= handbook.pageheader
+
+  .container
+    if handbook.breadcrumbs
+      ol.breadcrumb(class= !handbook.pageheader ? 'mt-2' : '')
+        block breadcrumbs
+          - const activeCrumb = handbook.breadcrumbs.pop();
+          each breadcrumb in handbook.breadcrumbs
+            li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
+          li.breadcrumb-item.active= activeCrumb.title
+
+    block handbook-content

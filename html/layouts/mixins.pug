@@ -1,0 +1,10 @@
+mixin icon(name, type='solid')
+  -
+    const icon = require(`@fortawesome/free-${type}-svg-icons/fa${name.charAt(0).toUpperCase() + name.slice(1)}.js`)
+    const cls = `icon icon-${icon.iconName}${attributes.class ? ' ' + attributes.class : ''}`
+    attributes.class = ''
+  svg(
+    xmlns="http://www.w3.org/2000/svg",
+    viewBox= `0 0 ${icon.width} ${icon.height}`,
+    class= cls)&attributes(attributes)
+    path(fill="currentColor", d= icon.svgPathData)

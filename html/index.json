@@ -1,0 +1,14 @@
+{
+  "home": "index",
+
+  "about": "about/index",
+  "standalones": "about/standalones",
+
+  "contact": "contact/index",
+
+  "download": "download/index",
+
+  "faq": "faq/index",
+
+  "handbook/warcraft-3": "handbook/warcraft-3"
+}
