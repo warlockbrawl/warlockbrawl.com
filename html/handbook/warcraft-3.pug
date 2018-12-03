@@ -1,4 +1,4 @@
-extends ../layouts/handbook
+extends ../templates/handbook
 
 block append handbook-config
   -
@@ -6,50 +6,8 @@ block append handbook-config
       title: 'Warcraft III quick start'
     });
     handbook.breadcrumbs = false;
-    handbook.pageheader = 'Warcraft III quick start'
+    handbook.pageheader = 'Warcraft III quick start';
     app.title = 'Warcraft III quick start - ' + app.title;
 
 block handbook-content
-  h2 Prerequisites
-  p.
-    In order to play Warlock, you must have Warcraft III: The Frozen Throne installed on your computer. You can purchase it by buying #[a(href="https://playwarcraft3.com/en-us/") Warcraft III: Reforged] which will get you the download for the game client. Alternatively, if you still have old CD keys lying around, you can add them to your #[a(href="https://battle.net/account/") battle.net] account for the same effect.
-
-  h2 Playing
-  h3 Battle.net
-  p.
-    Playing Warlock on Battle.net requires no additional setup and is the recommended platform to play Warlock on. Simply run the game and log into Battle.net and create or join games on the custom games list.
-
-  h3 Other clients
-  p.
-    3rd party clients and servers typically require a not-up-to-date version of Warcraft III and rely on LAN hacks to work. Nonetheless, you may still find active Warlock communities on them.
-
-  h4 ICCup
-  p.
-    #[a(href="https://iccup.com/") ICCup] is a Russian Warcraft III client. It does have at least one Western Europe server, but the rest are Russian. To set up, follow these steps:
-  ol
-    li
-      a(href="https://iccup.com/en/register.html") Register an account on their website.
-    li
-      a(href="https://iccup.com/en/files.html") Download and run their launcher.
-    li Now either set the Warcraft III path to your copy of it, or #[a(href="https://iccup.com/dota/dota_start.html") download theirs]. Downloading their copy will make dealing with different patches easier, as theirs is fixed on patch 1.26a.
-    li When Warcraft III is launched, enter Battle.net (make sure #[code The Abyss(ICCup)] is set as the gateway).
-    li Log in using your ICCup username and password you created earlier.
-    li Enter any channel, and type in #[code /j lock] to enter the Warlock channel where you can join/host games.
-  p.
-    More info can be found here on #[a(href="https://iccup.com/dota/dota_start.html") this guide] on their website.
-
-  h4 RGC
-  p.
-    #[a(href="http://rankedgaming.com/") RGC] is a multi-region Warcraft III client. It has American, European and Asian servers. To set up, follow these steps:
-  ol
-    li #[a(href="http://rankedgaming.com/") Download the client from their website] and run it.
-    li Register an account through the client and log in.
-    li Open your settings, navigate to the "Dota" section, and set the path to your Warcraft III executable.
-      ul
-        li (Optional) #[a(href="https://iccup.com/dota/dota_start.html") Download and use ICCup's version of Warcraft III] and use that for RGC. This will mean you'll have a separate Warcraft III fixed on patch 1.26a.
-    li Save and close settings and type in #[code /j (EU) Warlock] to join the main European channel. Also available are #[code (US) Warlock], #[code (SA) Warlock] and #[code (Asia) Warlock]. From there, you can host/see a list of open games.
-    li To join a game, launch Warcraft III through the "Start" button on RGC (see step 3), enter Local Area Network, and you should see the list of open games there.
-
-  h4 More
-  p.
-    Other clients include #[a(href="http://eurobattle.net/") Eurobattle.net], a public PvPGN client, as well as #[a(href="https://warcraft3.info/articles/147/guide-how-to-play-on-netease") NetEase] for the Chinese/Asian community.
+  include:markdown-it(html) ../../articles/warcraft-3.md

@@ -6,7 +6,7 @@
 
     url = index[file];
 
-    return url.endsWith('index')
+    return url.endsWith('/index')
       ? '/' + url.slice(0, -5)
       : '/' + url + '.html';
   };

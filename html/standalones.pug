@@ -1,4 +1,4 @@
-extends ./layouts/app
+extends ./templates/layout
 
 block append config
   -
@@ -10,15 +10,15 @@ block content
     p.
       Not an exhaustive list: Many of these are only known because their developers came to our forums or discord to mingle.
     .table-responsive
-      table.table.table-striped.sortable
+      table.table.table-striped
         thead
           tr
-            th(data-defaultsort="asc") Date
+            th Date
             th Title/developer
             th Engine/language
             th In-house?
             th Active?
-            th(data-defaultsort="disabled") Notes
+            th Notes
         tbody
           tr
             td 2010
