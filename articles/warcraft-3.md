@@ -7,7 +7,7 @@ In order to play Warlock, you must have Warcraft III: The Frozen Throne installe
 
 ### Battle.net
 
-Playing Warlock on Battle.net requires no additional setup and is the recommended platform to play Warlock on. Simply run the game and log into Battle.net and create or join games on the custom games list.
+Playing Warlock on Battle.net requires no additional setup and is the recommended platform to play Warlock on. Simply run the game and log into Battle.net and create or join games on the custom games list. The latest map can be found [here](https://www.warlockbrawl.com/download/).
 
 
 ### Other clients
