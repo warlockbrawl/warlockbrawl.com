@@ -1,4 +1,4 @@
-import * as $ from 'jquery'
+import * as $ from 'jquery';
 
 $('[data-mail]').each(function() {
   var $this = $(this),

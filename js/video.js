@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import * as isMobile from 'ismobilejs'
+import * as isMobile from 'ismobilejs';
 
 if (!isMobile.any) {
   $('.jumbotron-video-container[data-jumbotron-video]').each(function() {
