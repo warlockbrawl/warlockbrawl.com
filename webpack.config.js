@@ -3,6 +3,11 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const icons = {
+  regular: require('@fortawesome/free-regular-svg-icons'),
+  solid: require('@fortawesome/free-solid-svg-icons')
+};
+
 const index = require('./html/index.json');
 
 const config = {
@@ -10,21 +15,24 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 8888
+    port: 8888,
+    stats: 'errors-only'
   },
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
       },
       {
         test: /\.pug$/,
+        exclude: /node_modules/,
         use: 'pug-loader'
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader', options: { importLoaders: 1 } },
@@ -33,7 +41,8 @@ const config = {
         ]
       },
       {
-        test: /\.(png|jpg|gif|webm|mp4)$/,
+        test: /\.(png|jpg|gif|svg|webm|mp4)$/,
+        exclude: /node_modules/,
         use: [{ loader: 'file-loader', options: { name: 'assets/[hash].[ext]' } }]
       }
     ]
@@ -47,6 +56,7 @@ const config = {
     filename: index[page] + '.html',
     template: './html/' + page + '.pug',
     templateParameters: {
+      iconCache: icons,
       index: index,
       currentRoute: page
     }

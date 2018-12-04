@@ -1,7 +1,7 @@
-require('../scss/app.scss')
+import '../scss/app.scss';
 
-require('bootstrap/js/dist/util')
-require('bootstrap/js/dist/collapse')
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/collapse';
 
-require('./video')
-require('./mail')
+import './video';
+import './mail';
