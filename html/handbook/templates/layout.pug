@@ -1,0 +1,43 @@
+extends ../../templates/layout
+
+block append config
+  -
+    const handbook = {
+      breadcrumbs: [
+        {
+          url: app.route('handbook/home'),
+          title: 'Index',
+        }
+      ],
+      pageheader: 'Handbook'
+    };
+
+    app.title = 'Handbook - ' + app.title;
+
+  block handbook-config
+
+  -
+    app.borderedNav = !handbook.pageheader;
+
+block content
+  if handbook.pageheader
+    .app-pageheader
+      .container
+        h1= handbook.pageheader
+
+  .container
+    if handbook.breadcrumbs
+      nav(aria-label="breadcrumb")
+        ol.breadcrumb(class= !handbook.pageheader ? 'mt-2' : '')
+          - const activeCrumb = handbook.breadcrumbs.pop();
+          each breadcrumb in handbook.breadcrumbs
+            li.breadcrumb-item #[a(href= breadcrumb.url)= breadcrumb.title]
+          li.breadcrumb-item.active(aria-current="page")= activeCrumb.title
+
+    block handbook-content
+
+    if handbook.includedArticle
+      .mt-5.text-right
+        a(href= `${app.links.github}/warlockbrawl.com/edit/master/articles/${handbook.includedArticle}`, target="_blank") Edit this article
+          span.text-muted.ml-1
+            +icon('externalLinkAlt')

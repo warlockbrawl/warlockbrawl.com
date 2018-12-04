@@ -1,0 +1,75 @@
+.handbook-index {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+
+  @include media-breakpoint-down(xs) {
+    justify-content: center;
+  }
+
+  + h2 {
+    margin-top: ($spacer * 2);
+  }
+}
+
+.handbook-article-link {
+  width: 10rem;
+  min-height: 9.625rem;
+  padding: .5rem;
+  margin: .5rem;
+  align-items: center;
+  transition:
+    transform .25s ease,
+    box-shadow .5s ease;
+
+  @include plain-hover-focus {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  @include hover-focus {
+    transform: scale(1.025);
+    box-shadow: 0 .125rem .5rem rgba(0, 0, 0, 0.1);
+  }
+
+  .card-img-top {
+    width: 5rem;
+    max-width: 100%;
+
+    &.icon {
+      height: auto;
+      vertical-align: middle;
+    }
+
+    + .card-body {
+      margin-top: .5rem;
+      align-items: flex-start;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    > p {
+      text-align: center;
+    }
+  }
+}
+
+.handbook-index-sm {
+  margin-left: -.25rem;
+  margin-right: -.25rem;
+
+  .handbook-article-link {
+    width: 7.5rem;
+    min-height: 0;
+    margin: .25rem;
+
+    .card-img-top {
+      width: 2.5rem;
+    }
+  }
+}

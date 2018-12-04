@@ -1,11 +1,11 @@
-extends ../templates/handbook-layout
+extends ./templates/layout
 
 block append handbook-config
   -
     handbook.breadcrumbs.push({
+      url: app.route('handbook/warcraft-3'),
       title: 'Warcraft III quick start'
     });
-    handbook.breadcrumbs = false;
     handbook.pageheader = 'Warcraft III quick start';
     app.title = 'Warcraft III quick start - ' + app.title;
 

@@ -35,10 +35,11 @@ html(lang="en")
           span.navbar-toggler-icon
         #main-nav.collapse.navbar-collapse
           nav.nav.navbar-nav
-            a.nav-item.nav-link(class=(app.currentRoute==='download'?'active':''), href= app.route('download')) Download
-            a.nav-item.nav-link(class=(app.currentRoute==='faq'     ?'active':''), href= app.route('faq')) FAQ
+            a.nav-item.nav-link(class= (app.currentRoute === 'download' ? 'active' : ''), href= app.route('download')) Download
+            a.nav-item.nav-link(class= (app.currentRoute === 'faq' ? 'active' : ''), href= app.route('faq')) FAQ
             a.nav-item.nav-link(href= app.links.discord) Discord
             a.nav-item.nav-link(href= app.links.forum) Forum
+            a.nav-item.nav-link(class= (app.currentRoute.startsWith('handbook/') ? 'active' : ''), href= app.route('handbook/home')) #[+icon('book')] Handbook
 
     main#content.app-content
       block content

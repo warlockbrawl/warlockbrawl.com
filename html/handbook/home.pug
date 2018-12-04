@@ -1,0 +1,10 @@
+extends ./templates/layout
+
+block handbook-content
+  h2 General topics
+
+  .handbook-index
+    a.card.handbook-article-link(href= app.route('handbook/warcraft-3'))
+      img.card-img-top(src= require('../../assets/warcraft-iii.svg'), alt="Warcraft III")
+      .card-body
+        p.card-text Play Warlock in Warcraft III
