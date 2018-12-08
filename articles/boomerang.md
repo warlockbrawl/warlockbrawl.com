@@ -1,0 +1,1 @@
+**Boomerang** is a damage dealing projectile ability belonging to the <kbd>D</kbd> column of spells. Its trajectory is akin to a [boomerang's](https://en.wikipedia.org/wiki/Boomerang). The boomerang will deal damage on impact, but not be destroyed, and it has a consecutive hit bonus. It bounces off pillars.

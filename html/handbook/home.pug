@@ -8,3 +8,14 @@ block handbook-content
       img.card-img-top(src= require('../../assets/warcraft-iii.svg'), alt="Warcraft III")
       .card-body
         p.card-text Play Warlock in Warcraft III
+
+  h2 Warlock reference
+    small.text-muted  (work in progress)
+
+  .handbook-index.handbook-index-sm
+    each techtree in app.patch.getAll('techtree')
+      a.card.handbook-article-link(href= techtree.handbookUrl.replace('https://www.warlockbrawl.com', ''))
+        if techtree.iconUrl
+          img.card-img-top(src= techtree.iconUrl, alt= techtree.name)
+        .card-body
+          p.card-text= techtree.name

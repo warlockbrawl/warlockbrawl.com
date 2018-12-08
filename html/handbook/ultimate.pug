@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Ultimate'
+    });
+    handbook.pageheader = 'Ultimate';
+    handbook.includedArticle = 'ultimate.md';
+    app.title = 'Ultimate - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/ultimate.md

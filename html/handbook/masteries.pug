@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Masteries'
+    });
+    handbook.pageheader = 'Masteries';
+    handbook.includedArticle = 'masteries.md';
+    app.title = 'Masteries - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/masteries.md

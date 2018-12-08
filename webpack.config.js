@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { lightningLatest, Patch } = require('./warlock-patches');
 
 const icons = {
   regular: require('@fortawesome/free-regular-svg-icons'),
@@ -9,6 +10,7 @@ const icons = {
 };
 
 const index = require('./html/index.json');
+const patch = new Patch(lightningLatest);
 
 const config = {
   entry: ['./js/app.js'],
@@ -58,7 +60,8 @@ const config = {
     templateParameters: {
       iconCache: icons,
       index: index,
-      currentRoute: page
+      currentRoute: page,
+      patch: patch
     }
   }))
 };

@@ -1,0 +1,1 @@
+**Time shift** is a channeled space shifting damage negating ability that belongs to the <kbd>C</kbd> column of spells. When its channeling ends, the caster's position and hitpoints are restored to their state when channeling began. The caster's damagepoints are not fully restored. The caster can cancel channeling at any time.

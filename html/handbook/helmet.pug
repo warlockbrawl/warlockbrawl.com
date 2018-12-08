@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Helmet'
+    });
+    handbook.pageheader = 'Helmet';
+    handbook.includedArticle = 'helmet.md';
+    app.title = 'Helmet - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/helmet.md

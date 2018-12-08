@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Warden'
+    });
+    handbook.pageheader = 'Warden';
+    handbook.includedArticle = 'warden.md';
+    app.title = 'Warden - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/warden.md

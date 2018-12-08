@@ -37,7 +37,7 @@ block content
     block handbook-content
 
     if handbook.includedArticle
-      .mt-5.text-right
-        a(href= `${app.links.github}/warlockbrawl.com/edit/master/articles/${handbook.includedArticle}`, target="_blank") Edit this article
+      .mt-5
+        a(href= `${app.links.github}/warlockbrawl.com/edit/master/articles/${handbook.includedArticle}`, target="_blank") Edit this page
           span.text-muted.ml-1
             +icon('externalLinkAlt')

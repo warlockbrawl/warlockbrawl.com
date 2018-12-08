@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Thrust'
+    });
+    handbook.pageheader = 'Thrust';
+    handbook.includedArticle = 'thrust.md';
+    app.title = 'Thrust - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/thrust.md

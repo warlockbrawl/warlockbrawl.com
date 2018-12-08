@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Boots of Speed'
+    });
+    handbook.pageheader = 'Boots of Speed';
+    handbook.includedArticle = 'boots_of_speed.md';
+    app.title = 'Boots of Speed - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/boots_of_speed.md

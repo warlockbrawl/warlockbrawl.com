@@ -1,0 +1,36 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Lightning'
+    });
+    handbook.pageheader = 'Lightning';
+    handbook.includedArticle = 'lightning.md';
+    app.title = 'Lightning - ' + app.title;
+
+block handbook-content
+  .handbook-content
+    .card.handbook-infobox
+      .card-header Lightning
+      img.card-img-top(src= app.patch.getById('techtree', 'lightning').iconUrl)
+      table.table.table-responsive
+        tbody
+          tr
+            th Damage
+            td 7.0
+            td 7.8
+            td 8.6
+            td 9.4
+            td 10.2
+            td 11.0
+          tr
+            th Cooldown
+            td 16.5
+            td 15.5
+            td 15.0
+            td 14.5
+            td 14.0
+            td 13.5
+
+    include:markdown-it(html) ../../articles/lightning.md

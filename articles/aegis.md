@@ -1,0 +1,1 @@
+**Aegis** is a defensive charged item. It increases the wielder's mass, but reduces their hitpoints. If the wielder casts their <kbd>F</kbd> spell they will temporarily take reduced damage and knockback. The shield can be recharged by landing a [Fireball](fireball.html) (or *Freeze*) on an opponent.

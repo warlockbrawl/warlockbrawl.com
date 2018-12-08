@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Wind Walk'
+    });
+    handbook.pageheader = 'Wind Walk';
+    handbook.includedArticle = 'wind_walk.md';
+    app.title = 'Wind Walk - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/wind_walk.md

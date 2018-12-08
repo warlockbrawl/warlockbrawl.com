@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Link'
+    });
+    handbook.pageheader = 'Link';
+    handbook.includedArticle = 'link.md';
+    app.title = 'Link - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/link.md

@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Staff of Fireball'
+    });
+    handbook.pageheader = 'Staff of Fireball';
+    handbook.includedArticle = 'staff_of_fireball.md';
+    app.title = 'Staff of Fireball - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/staff_of_fireball.md

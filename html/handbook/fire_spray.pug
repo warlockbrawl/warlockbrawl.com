@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Fire Spray'
+    });
+    handbook.pageheader = 'Fire Spray';
+    handbook.includedArticle = 'fire-spray.md';
+    app.title = 'Fire Spray - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/fire-spray.md

@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Meteor'
+    });
+    handbook.pageheader = 'Meteor';
+    handbook.includedArticle = 'meteor.md';
+    app.title = 'Meteor - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/meteor.md

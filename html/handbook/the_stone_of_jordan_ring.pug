@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'The Stone of Jordan Ring'
+    });
+    handbook.pageheader = 'The Stone of Jordan Ring';
+    handbook.includedArticle = 'the_stone_of_jordan_ring.md';
+    app.title = 'The Stone of Jordan Ring - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/the_stone_of_jordan_ring.md

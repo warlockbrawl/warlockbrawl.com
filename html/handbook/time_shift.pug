@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Time Shift'
+    });
+    handbook.pageheader = 'Time Shift';
+    handbook.includedArticle = 'time_shift.md';
+    app.title = 'Time Shift - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/time_shift.md

@@ -1,0 +1,3 @@
+[submodule "warlock-patches"]
+	path = warlock-patches
+	url = https://github.com/warlockbrawl/warlock-patches.git

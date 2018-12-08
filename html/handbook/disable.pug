@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Disable'
+    });
+    handbook.pageheader = 'Disable';
+    handbook.includedArticle = 'disable.md';
+    app.title = 'Disable - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/disable.md

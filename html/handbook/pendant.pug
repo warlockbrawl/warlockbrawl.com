@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Pendant'
+    });
+    handbook.pageheader = 'Pendant';
+    handbook.includedArticle = 'pendant.md';
+    app.title = 'Pendant - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/pendant.md

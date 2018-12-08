@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Pocket Watch'
+    });
+    handbook.pageheader = 'Pocket Watch';
+    handbook.includedArticle = 'pocket_watch.md';
+    app.title = 'Pocket Watch - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/pocket_watch.md

@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Mask of Death'
+    });
+    handbook.pageheader = 'Mask of Death';
+    handbook.includedArticle = 'mask_of_death.md';
+    app.title = 'Mask of Death - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/mask_of_death.md

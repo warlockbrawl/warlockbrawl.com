@@ -1,0 +1,1 @@
+**Fireball** is a damage dealing projectile ability. It is one of two spells that every player starts with; the other is the player's <kbd>F</kbd> spell. It is also the only spell belonging to the <kbd>G</kbd> column, with the exception of *Freeze*.

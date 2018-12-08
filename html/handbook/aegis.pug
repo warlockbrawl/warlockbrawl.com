@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Aegis'
+    });
+    handbook.pageheader = 'Aegis';
+    handbook.includedArticle = 'aegis.md';
+    app.title = 'Aegis - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/aegis.md

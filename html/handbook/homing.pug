@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Homing'
+    });
+    handbook.pageheader = 'Homing';
+    handbook.includedArticle = 'homing.md';
+    app.title = 'Homing - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/homing.md

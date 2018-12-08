@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Swap'
+    });
+    handbook.pageheader = 'Swap';
+    handbook.includedArticle = 'swap.md';
+    app.title = 'Swap - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/swap.md

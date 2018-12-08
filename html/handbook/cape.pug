@@ -1,0 +1,13 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    handbook.breadcrumbs.push({
+      title: 'Cape'
+    });
+    handbook.pageheader = 'Cape';
+    handbook.includedArticle = 'cape.md';
+    app.title = 'Cape - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/cape.md

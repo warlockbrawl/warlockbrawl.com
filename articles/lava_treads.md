@@ -1,0 +1,1 @@
+**Lava Treads** are a charged defensive mobility item. They increase the wearer's movement speed, but increase their susceptibility to life steal. If the wearer casts their <kbd>F</kbd> spell while positioned on lava, they will temporarily become immune to lava damage and receive some of their hitpoints back if below a threshold. The treads recharge on a cooldown.

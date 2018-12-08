@@ -1,0 +1,1 @@
+**Staff of Fireball** is a tech item that modifies the behavior of the wielder's [Fireball](fireball.html). The staff reduces its impact damage but adds burning damage that becomes greater with consecutive hits.
