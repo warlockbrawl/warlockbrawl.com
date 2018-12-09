@@ -19,6 +19,7 @@
   padding: .5rem;
   margin: .5rem;
   align-items: center;
+  justify-content: center;
   transition:
     transform .25s ease,
     box-shadow .5s ease;
@@ -49,8 +50,7 @@
   }
 
   .card-body {
-    display: flex;
-    align-items: center;
+    flex: 0;
     padding: 0;
 
     > p {
@@ -65,7 +65,7 @@
 
   .handbook-article-link {
     width: 7.5rem;
-    min-height: 0;
+    min-height: 7rem;
     margin: .25rem;
 
     .card-img-top {
