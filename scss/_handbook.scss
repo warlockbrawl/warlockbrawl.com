@@ -30,8 +30,9 @@
   }
 
   @include hover-focus {
-    transform: scale(1.025);
+    transform: scale(1.015);
     box-shadow: 0 .125rem .5rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .card-img-top {
