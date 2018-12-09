@@ -1,0 +1,51 @@
+{
+  "home": "index",
+
+  "about": "about/index",
+  "standalones": "about/standalones",
+
+  "contact": "contact/index",
+
+  "download": "download/index",
+
+  "faq": "faq/index",
+
+  "handbook/home": "handbook/index",
+  "handbook/warcraft-3": "handbook/warcraft-3",
+
+  "!handbook-reference-loader.js?type=techtree&id=fireball!./html/handbook/reference.pug": "handbook/fireball",
+  "!handbook-reference-loader.js?type=techtree&id=lightning!./html/handbook/reference.pug": "handbook/lightning",
+  "!handbook-reference-loader.js?type=techtree&id=boomerang!./html/handbook/reference.pug": "handbook/boomerang",
+  "!handbook-reference-loader.js?type=techtree&id=homing!./html/handbook/reference.pug": "handbook/homing",
+  "!handbook-reference-loader.js?type=techtree&id=teleport!./html/handbook/reference.pug": "handbook/teleport",
+  "!handbook-reference-loader.js?type=techtree&id=thrust!./html/handbook/reference.pug": "handbook/thrust",
+  "!handbook-reference-loader.js?type=techtree&id=swap!./html/handbook/reference.pug": "handbook/swap",
+  "!handbook-reference-loader.js?type=techtree&id=drain!./html/handbook/reference.pug": "handbook/drain",
+  "!handbook-reference-loader.js?type=techtree&id=firespray&article=fire-spray!./html/handbook/reference.pug": "handbook/fire-spray",
+  "!handbook-reference-loader.js?type=techtree&id=bouncer!./html/handbook/reference.pug": "handbook/bouncer",
+  "!handbook-reference-loader.js?type=techtree&id=meteor!./html/handbook/reference.pug": "handbook/meteor",
+  "!handbook-reference-loader.js?type=techtree&id=windwalk&article=wind_walk!./html/handbook/reference.pug": "handbook/wind-walk",
+  "!handbook-reference-loader.js?type=techtree&id=splitter!./html/handbook/reference.pug": "handbook/splitter",
+  "!handbook-reference-loader.js?type=techtree&id=rush!./html/handbook/reference.pug": "handbook/rush",
+  "!handbook-reference-loader.js?type=techtree&id=shield!./html/handbook/reference.pug": "handbook/shield",
+  "!handbook-reference-loader.js?type=techtree&id=timeshift&article=time_shift!./html/handbook/reference.pug": "handbook/time-shift",
+  "!handbook-reference-loader.js?type=techtree&id=link!./html/handbook/reference.pug": "handbook/link",
+  "!handbook-reference-loader.js?type=techtree&id=disable!./html/handbook/reference.pug": "handbook/disable",
+  "!handbook-reference-loader.js?type=techtree&id=gravity!./html/handbook/reference.pug": "handbook/gravity",
+  "!handbook-reference-loader.js?type=techtree&id=pocketwatch&article=pocket_watch!./html/handbook/reference.pug": "handbook/pocket-watch",
+  "!handbook-reference-loader.js?type=techtree&id=lavatreads&article=lava_treads!./html/handbook/reference.pug": "handbook/lava-treads",
+  "!handbook-reference-loader.js?type=techtree&id=bloodsword&article=blood_sword!./html/handbook/reference.pug": "handbook/blood-sword",
+  "!handbook-reference-loader.js?type=techtree&id=jordan&article=the_stone_of_jordan_ring!./html/handbook/reference.pug": "handbook/the-stone-of-jordan-ring",
+  "!handbook-reference-loader.js?type=techtree&id=bootsofspeed&article=boots_of_speed!./html/handbook/reference.pug": "handbook/boots-of-speed",
+  "!handbook-reference-loader.js?type=techtree&id=cape!./html/handbook/reference.pug": "handbook/cape",
+  "!handbook-reference-loader.js?type=techtree&id=pendant!./html/handbook/reference.pug": "handbook/pendant",
+  "!handbook-reference-loader.js?type=techtree&id=helmet!./html/handbook/reference.pug": "handbook/helmet",
+  "!handbook-reference-loader.js?type=techtree&id=staffoffireball&article=staff_of_fireball!./html/handbook/reference.pug": "handbook/staff-of-fireball",
+  "!handbook-reference-loader.js?type=techtree&id=aegis!./html/handbook/reference.pug": "handbook/aegis",
+  "!handbook-reference-loader.js?type=techtree&id=warden!./html/handbook/reference.pug": "handbook/warden",
+  "!handbook-reference-loader.js?type=techtree&id=cursedpendant&article=cursed_pendant!./html/handbook/reference.pug": "handbook/cursed-pendant",
+  "!handbook-reference-loader.js?type=techtree&id=maskofdeath&article=mask_of_death!./html/handbook/reference.pug": "handbook/mask-of-death",
+  "!handbook-reference-loader.js?type=techtree&id=mastery&article=masteries!./html/handbook/reference.pug": "handbook/masteries",
+  "!handbook-reference-loader.js?type=techtree&id=inventory!./html/handbook/reference.pug": "handbook/inventory",
+  "!handbook-reference-loader.js?type=techtree&id=ultimate!./html/handbook/reference.pug": "handbook/ultimate"
+}

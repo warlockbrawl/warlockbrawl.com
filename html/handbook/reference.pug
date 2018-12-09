@@ -1,0 +1,14 @@
+extends ./templates/layout
+
+block append handbook-config
+  -
+    const thing = app.patch.getById('{{{{TYPE}}}}', '{{{{ID}}}}');
+    handbook.breadcrumbs.push({
+      title: thing.name
+    });
+    handbook.pageheader = thing.name;
+    handbook.includedArticle = '{{{{ARTICLE}}}}';
+    app.title = thing.name + ' - ' + app.title;
+
+block handbook-content
+  include:markdown-it(html) ../../articles/{{{{ARTICLE}}}}

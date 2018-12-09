@@ -9,7 +9,7 @@ const icons = {
   solid: require('@fortawesome/free-solid-svg-icons')
 };
 
-const index = require('./html/index.json');
+const routes = require('./html/routes.json');
 const patch = new Patch(lightningLatest);
 
 const config = {
@@ -19,6 +19,9 @@ const config = {
     compress: true,
     port: 8888,
     stats: 'errors-only'
+  },
+  resolve: {
+    modules: [path.resolve(__dirname, 'bin'), 'node_modules']
   },
   module: {
     rules: [
@@ -54,13 +57,15 @@ const config = {
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
-  plugins: Object.keys(index).map(page => new HtmlWebpackPlugin({
-    filename: index[page] + '.html',
-    template: './html/' + page + '.pug',
+  plugins: Object.keys(routes).map(route => new HtmlWebpackPlugin({
+    filename: routes[route] + '.html',
+    template: route.startsWith('!')
+      ? '!!pug-loader!./html/preprocessors/' + route.slice(1)
+      : './html/' + route + '.pug',
     templateParameters: {
       iconCache: icons,
-      index: index,
-      currentRoute: page,
+      routes: routes,
+      currentRoute: route,
       patch: patch
     }
   }))

@@ -12,6 +12,7 @@ block config
         github: 'https://github.com/warlockbrawl',
         forum: 'https://forum.warlockbrawl.com/'
       },
+      currentUrl: locals.route(locals.currentRoute),
       borderedNav: !['home', 'download', 'faq'].includes(locals.currentRoute),
       bodyAttrs: {}
     };
@@ -39,7 +40,7 @@ html(lang="en")
             a.nav-item.nav-link(class= (app.currentRoute === 'faq' ? 'active' : ''), href= app.route('faq')) FAQ
             a.nav-item.nav-link(href= app.links.discord) Discord
             a.nav-item.nav-link(href= app.links.forum) Forum
-            a.nav-item.nav-link(class= (app.currentRoute.startsWith('handbook/') ? 'active' : ''), href= app.route('handbook/home')) #[+icon('book')] Handbook
+            a.nav-item.nav-link(class= (app.currentUrl.startsWith('/handbook/') ? 'active' : ''), href= app.route('handbook/home')) #[+icon('book')] Handbook
 
     main#content.app-content
       block content

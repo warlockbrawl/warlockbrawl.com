@@ -1,10 +1,10 @@
 -
   locals.route = function(file) {
-    if (!index[file]) {
+    if (!routes[file]) {
       throw new Error(`Invalid route: ${file}`);
     }
 
-    url = index[file];
+    url = routes[file];
 
     return (url.endsWith('/index') || url === 'index')
       ? '/' + url.slice(0, -5)
