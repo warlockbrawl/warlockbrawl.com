@@ -13,6 +13,7 @@ Building
 - Have [node + npm](https://nodejs.org/) installed
 - ``git clone https://github.com/warlockbrawl/warlockbrawl.com.git``
 - ``cd warlockbrawl.com``
+- ``git submodule update --init``
 - ``npm install``
 - ``npm run start`` will start a local webserver, watch and livereload
   your changes at http://localhost:8888/
