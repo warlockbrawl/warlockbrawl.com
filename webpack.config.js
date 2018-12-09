@@ -20,9 +20,6 @@ const config = {
     port: 8888,
     stats: 'errors-only'
   },
-  resolve: {
-    modules: [path.resolve(__dirname, 'bin'), 'node_modules']
-  },
   module: {
     rules: [
       {
