@@ -16,6 +16,6 @@ block handbook-content
     each techtree in app.patch.getAll('techtree')
       a.card.handbook-article-link(href= techtree.handbookUrl.replace('https://www.warlockbrawl.com', ''))
         if techtree.iconUrl
-          img.card-img-top(src= techtree.iconUrl, alt= techtree.name)
+          img.card-img-top.wc3-icon(src= techtree.iconUrl, alt= techtree.name)
         .card-body
           p.card-text= techtree.name

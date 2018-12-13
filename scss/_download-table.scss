@@ -1,8 +1,14 @@
 table.download-table {
   td a {
-    margin-right: 0.75rem;
-    text-decoration: none;
     white-space: nowrap;
+
+    + a {
+      margin-left: .75rem;
+    }
+
+    .icon {
+      margin-right: .25rem;
+    }
   }
 
   tr:first-child td {

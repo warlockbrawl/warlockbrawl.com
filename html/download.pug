@@ -71,13 +71,13 @@ block content
       td= download.title
       td
         if download.changelog
-          a(href= download.changelog) #[+icon('fileAlt').icon-fw] Changelog
+          a(href= download.changelog) #[+icon('fileAlt').icon-fw]Changelog
         if download.direct
           if download.link
             a(href= download.link) #[+icon('globe').icon-fw]
-          a(href= download.direct) #[+icon('download').icon-fw] #{download.link ? download.link : download.direct}
+          a(href= download.direct) #[+icon('download').icon-fw]#{download.link ? download.link : download.direct}
         else if download.link
-          a(href= download.link) #[+icon('globe').icon-fw] #{download.link}
+          a(href= download.link) #[+icon('globe').icon-fw]#{download.link}
 
   .app-pageheader
     .container
