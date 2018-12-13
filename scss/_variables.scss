@@ -44,83 +44,28 @@ $font-family-sans-serif:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe
 
 $hr-border-color:  $gray-900;
 
-$table-accent-bg:             $gray-700;
-$table-border-color:          $gray-600;
-$table-border-width:          0;
-$table-dark-bg:               $gray-500;
-$table-dark-border-color:     darken($gray-500, 7.5%);
-$table-dark-color:            $body-bg;
+$table-accent-bg:     $gray-700;
+$table-border-color:  $gray-600;
+$table-border-width:  0;
 
-$input-border-color:        transparent;
-$input-group-addon-color:   $gray-500;
-$input-group-addon-bg:      $gray-700;
-$custom-file-color:         $gray-500;
-$custom-file-border-color:  $gray-700;
+$navbar-padding-y:                   1rem;
+$navbar-light-color:                 rgba($white, .75);
+$navbar-light-bg:                    $gray-900;
+$navbar-light-hover-color:           $white;
+$navbar-light-active-color:          $white;
+$navbar-light-disabled-color:        rgba($white, .3);
+$navbar-light-toggler-border-color:  rgba($white, .1);
 
-$dropdown-bg:                       $gray-900;
-$dropdown-border-color:             $gray-700;
-$dropdown-divider-bg:               $gray-700;
-$dropdown-link-color:               $white;
-$dropdown-link-hover-color:         $white;
-$dropdown-link-hover-bg:            $primary;
+$card-cap-bg:  $gray-800;
+$card-bg:      $gray-900;
 
-$nav-link-padding-x:                2rem;
-$nav-link-disabled-color:           $gray-500;
-$nav-tabs-border-color:             $gray-700;
-$nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-color transparent;
-$nav-tabs-link-active-color:        $white;
-$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color transparent;
+$breadcrumb-bg: $gray-700;
 
-$navbar-padding-y:                  1rem;
-$navbar-dark-color:                 $white;
-$navbar-dark-hover-color:           $primary;
-$navbar-light-color:                rgba($white, .75);
-$navbar-light-bg:                   $gray-900;
-$navbar-light-hover-color:          $white;
-$navbar-light-active-color:         $white;
-$navbar-light-disabled-color:       rgba($white, .3);
-$navbar-light-toggler-border-color: rgba($white, .1);
+$pre-color:      inherit;
+$kbd-bg:         rgba($gray-900, .7);
+$kbd-padding-y:  .1rem;
+$kbd-padding-x:  .4rem;
 
-$pagination-color:                  $white;
-$pagination-bg:                     $primary;
-$pagination-border-width:           0;
-$pagination-border-color:           transparent;
-$pagination-hover-color:            $white;
-$pagination-hover-bg:               lighten($primary, 10%);
-$pagination-hover-border-color:     transparent;
-$pagination-active-bg:              $pagination-hover-bg;
-$pagination-active-border-color:    transparent;
-$pagination-disabled-color:         $white;
-$pagination-disabled-bg:            darken($primary, 15%);
-$pagination-disabled-border-color:  transparent;
-
-$jumbotron-bg: $gray-800;
-
-$card-cap-bg:   $gray-800;
-$card-bg:       $gray-900;
-
-$popover-bg:          $gray-800;
-$popover-header-bg:   $gray-700;
-
-$modal-content-bg:             $gray-800;
-$modal-content-border-color:   $gray-700;
-$modal-header-border-color:    $gray-700;
-
-$progress-bg:         $gray-700;
-
-$list-group-bg:           $gray-800;
-$list-group-border-color: $gray-700;
-$list-group-hover-bg:     $gray-700;
-
-$breadcrumb-bg:     $gray-700;
-
-$close-color:       $white;
-$close-text-shadow: none;
-
-$pre-color:     inherit;
-$kbd-bg:        rgba($gray-900, .7);
-$kbd-padding-y: .1rem;
-$kbd-padding-x: .4rem;
-
-$jumbotron-video-bg:     rgba($gray-800, 0.6);
-$zindex-jumbotron-video: -1010;
+$jumbotron-bg:            $gray-800;
+$jumbotron-video-bg:      rgba($gray-800, 0.6);
+$zindex-jumbotron-video:  -1010;
