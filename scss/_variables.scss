@@ -1,31 +1,28 @@
 // Variables
 //
-// Inspired by Darkly
-// https://github.com/thomaspark/bootswatch
-//
 
 $white:    #fff;
 $gray-100: #f8f9fa;
-$gray-200: #ebebeb;
+$gray-200: #e9ecef;
 $gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
-$gray-600: #999;
-$gray-700: #444;
-$gray-800: #303030;
-$gray-900: #222;
+$gray-600: #6c757d;
+$gray-700: #36393f;
+$gray-800: #26262b;
+$gray-900: #1c1e21;
 $black:    #000;
 
-$blue:    #375a7f;
+$blue:    #007bff;
 $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #e83e8c;
-$red:     #e74c3c;
+$red:     #dc3545;
 $orange:  #fd7e14;
-$yellow:  #f39c12;
-$green:   #00bc8c;
+$yellow:  #ffc107;
+$green:   #28a745;
 $teal:    #20c997;
-$cyan:    #3498db;
+$cyan:    #17a2b8;
 
 $primary:     $red;
 $secondary:   $gray-700;
@@ -36,11 +33,13 @@ $danger:      $red;
 $light:       $gray-800;
 $dark:        $gray-500;
 
-$yiq-contrasted-threshold:  175;
+$body-bg:        $gray-800;
+$body-color:     $white;
 
-$body-bg:                 $gray-800;
-$body-color:              $white;
 $font-family-sans-serif:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$link-color:       $primary;
+$link-hover-color: $link-color;
 
 $hr-border-color:  $gray-900;
 
@@ -50,7 +49,6 @@ $table-border-width:  0;
 
 $navbar-padding-y:                   1rem;
 $navbar-light-color:                 rgba($white, .75);
-$navbar-light-bg:                    $gray-900;
 $navbar-light-hover-color:           $white;
 $navbar-light-active-color:          $white;
 $navbar-light-disabled-color:        rgba($white, .3);
@@ -62,10 +60,13 @@ $card-bg:      $gray-900;
 $breadcrumb-bg: $gray-700;
 
 $pre-color:      inherit;
-$kbd-bg:         rgba($gray-900, .7);
+$kbd-bg:         rgba($gray-900, .9);
 $kbd-padding-y:  .1rem;
 $kbd-padding-x:  .4rem;
 
 $jumbotron-bg:            $gray-800;
 $jumbotron-video-bg:      rgba($gray-800, 0.6);
 $zindex-jumbotron-video:  -1010;
+
+$footer-bg:    #222327;
+$footer-color: $gray-100;
