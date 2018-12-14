@@ -6,92 +6,86 @@ block append config
 
 block content
   -
-    const faq = [
-      {
-        category: 'Dota 2',
-        questions: [
-          {
-            question: 'Is Warlock available for Dota 2?',
-            answer: 'The Warlock mod (Warlock Brawl) can be played in Dota 2 workshop <a href="/dota/">here</a>.'
-          },
-          {
-            question: 'Is the Warlock Brawl mod based on the original Warlock map?',
-            answer: 'Yes. The exact game balance (spells, movement speed, etc.) is transferred from WC3 to Dota 2 - parameters the Warlock Brawl community has decided over the course of many years. There are also improvements, new spells/items and new features.'
-          },
-          {
-            question: 'Who is developing the Warlock Brawl mod?',
-            answer: 'The Warlock Brawl mod was created by Zymoran, Adynathos and Toraxxx, developers of the original WC3 map. Toraxxx lead the project and is the current maintainer.'
-          }
-        ]
-      },
-      {
-        category: 'Warcraft III',
-        questions: [
-          {
-            question: 'Where can I play WC3 Warlock?',
-            answer: '<a href="' + app.route('handbook/warcraft-3') + '">Battle.net, ICCup, RGC and Eurobattle.net</a> are commonly used clients, but <a href="#warcraft-iii-is-warlock-still-active">don\'t expect much activity</a>. We recommend <a href="' + app.links.discord + '">joining the Discord</a> to find other players.'
-          },
-          {
-            question: 'Where can I get the latest version?',
-            answer: 'The latest version can be found <a href="' + app.route('download') + '">here</a>, on <a href="http://www.hiveworkshop.com/forums/maps-564/warlock-92687/" target="_blank">Hiveworkshop</a> or on epicwar.com.'
-          },
-          {
-            question: 'Is Warlock still active?',
-            answer: 'There are still many people who play Warlock competitively or casually all across the world, scattered across many WC3 clients. There are however very few dedicated online Warlock communities left, if any.'
-          },
-          {
-            question: 'Is the map still being updated?',
-            answer: 'Yes. Zymoran has never truly stopped working on it, though the pace may have changed over the years. Patches to Warcraft III in 2017 and 2018 have also caused increased interest in development as new tech has become available.'
-          },
-          {
-            question: 'Who is developing the map?',
-            answer: 'Zymoran and sides maintain the map.'
-          }
-        ]
-      },
-      {
-        category: 'Standalone',
-        questions: [
-          {
-            question: 'Is the Warlock standalone coming soon?',
-            answer: 'Short answer: No. <br> The idea of a Warlock standalone is a nice one, so nice it has been attempted <a href="/about/standalones.html">multiple times in the past</a>, but never succeeded due to various issues. <a href="/forums/general-discussion/warlock-udk">Progress was made</a> on a standalone in UDK by us, the original development team, some time ago, but focus was shifted towards the Dota 2 version. There is currently an effort by Adynathos to bring back the standalone in UE4. <a href="/forums/general-discussion/warlock-standalone-reactivated-401">Read more</a>.'
-          }
-        ]
-      },
-      {
-        category: 'Warlock Brawl',
-        questions: [
-          {
-            question: 'What is the difference between "Warlock Brawl," "Warlock," "Warlocks," etc?',
-            answer: 'The original WC3 map is called Warlock, but is often mistakenly referred to as Warlocks or Warlock Brawl. Warlock Brawl is the name of the community that surrounded Warlock\'s most die-hard players whose feedback shaped Warlock into what it is today. The Dota 2 mod is also called Warlock Brawl.'
-          },
-          {
-            question: 'Who is behind this website, the Discord, etc?',
-            answer: 'The Warlock Brawl community is and has always been ran by the developers themselves, namely Zymoran, Adynathos, Toraxxx and sides.'
-          }
-        ]
-      }
-    ];
+    const toc = [];
+    let currentCategory;
+
+  mixin category(categoryName)
+    -
+      currentCategory = {
+        name: categoryName,
+        anchor: app.urlify(categoryName),
+        children: []
+      };
+
+      toc.push(currentCategory);
+
+  mixin question(questionName)
+    -
+      const question = {
+        name: questionName,
+        anchor: `${currentCategory.anchor}-${app.urlify(questionName)}`,
+        body: block
+      };
+
+      currentCategory.children.push(question);
 
   .app-pageheader
     .container
       h1 Frequently asked questions
 
   .container
+    +category('Dota 2')
+    +question('Is Warlock available for Dota 2?')
+      | The Warlock mod (Warlock Brawl) can be played in Dota 2 workshop #[a(href="/dota/") here].
+
+    +question('Is the Warlock Brawl mod based on the original Warlock map?')
+      | Yes. The exact game balance (spells, movement speed, etc.) is transferred from WC3 to Dota 2 - parameters the Warlock Brawl community has decided over the course of many years. There are also improvements, new spells/items and new features.
+
+    +question('Who is developing the Warlock Brawl mod?')
+      | The Warlock Brawl mod was created by Zymoran, Adynathos and Toraxxx, developers of the original WC3 map. Toraxxx lead the project and is the current maintainer.
+
+    +category('Warcraft III')
+    +question('Where can I play WC3 Warlock?')
+      | #[a(href= app.route('handbook/warcraft-3')) Battle.net, ICCup, RGC and Eurobattle.net] are commonly used clients, but #[a(href="#warcraft-iii-is-warlock-still-active") don't expect much activity]. We recommend #[a(href= app.links.discord) joining the Discord] to find other players.
+
+    +question('Where can I get the latest version?')
+      | The latest version can be found #[a(href= app.route('download')) here], on #[a(href="http://www.hiveworkshop.com/forums/maps-564/warlock-92687/" target="_blank") Hiveworkshop] or on epicwar.com.
+
+    +question('Is Warlock still active?')
+      | There are still many people who play Warlock competitively or casually all across the world, scattered across many WC3 clients. There are however very few dedicated online Warlock communities left, if any.
+
+    +question('Is the map still being updated?')
+      | Yes. Zymoran has never truly stopped working on it, though the pace may have changed over the years. Patches to Warcraft III in 2017 and 2018 have also caused increased interest in development as new tech has become available.
+
+    +question('Who is developing the map?')
+      | Zymoran and sides maintain the map.
+
+    +category('Standalone')
+    +question('Is the Warlock standalone coming soon?')
+      | Short answer: No. #[br]
+      | The idea of a Warlock standalone is a nice one, so nice it has been attempted #[a(href= app.route('standalones')) multiple times in the past], but never succeeded due to various issues. #[a(href= app.links.forum + 'd/43-warlock-udk') Progress was made] on a standalone in UDK by us, the original development team, some time ago, but focus was shifted towards the Dota 2 version. There is currently an effort by Adynathos to bring back the standalone in UE4. #[a(href= app.links.forum + 'd/401-warlock-standalone-reactivated') Read more].
+
+    +category('Warlock Brawl')
+    +question('What is the difference between "Warlock Brawl," "Warlock," "Warlocks," etc?')
+      | The original WC3 map is called Warlock, but is often mistakenly referred to as Warlocks or Warlock Brawl. Warlock Brawl is the name of this website and forum which was an integral part of Warlock's development. The Dota 2 mod is also called Warlock Brawl.
+
+    +question('Who is behind this website, the Discord, etc?')
+      | The Warlock Brawl community is and has always been ran by the developers themselves, namely Zymoran, Adynathos, Toraxxx and sides.
+
     h2 Contents
     ul
-      each category in faq
-        - category.anchor = app.urlify(category.category);
-        li #[a(href="#" + category.anchor)= category.category]
-          ul
-            each question in category.questions
-              - question.anchor = app.urlify(question.question)
-              li #[a(href="#" + category.anchor + '-' + question.anchor)!= question.question]
+      each item in toc
+        li #[a(href="#" + item.anchor)= item.name]
+          if item.children.length > 0
+            ul
+              each child in item.children
+                li #[a(href="#" + child.anchor)= child.name]
 
-    each category in faq
-      section.mt-4(id= category.anchor)
-        h2.page-header= category.category
-        each question in category.questions
-          dl(id= category.anchor + '-' + question.anchor)
-            dt!= question.question
-            dd!= question.answer
+    each item in toc
+      section.mt-4(id= item.anchor)
+        h2= item.name
+        each child in item.children
+          dl(id= child.anchor)
+            dt= child.name
+            dd
+              - child.body && child.body()

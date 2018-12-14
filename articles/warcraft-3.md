@@ -1,13 +1,13 @@
 ## Installation
 
-In order to play Warlock, you must have Warcraft III: The Frozen Throne installed on your computer. You can purchase it by buying [Warcraft III: Reforged](https://playwarcraft3.com/en-us/) which will get you the download for the game client. Alternatively, if you still have old CD keys lying around, you can add them to your [battle.net account](https://battle.net/account/) for the same effect.
+In order to play Warlock, you must have Warcraft III: The Frozen Throne installed on your computer. You can purchase it by buying [Warcraft III: Reforged](https://playwarcraft3.com/en-us/) which will get you the download for the game client. Alternatively, if you still have old CD keys lying around, you can add them to your [battle.net account](https://battle.net/account/) for the same effect or [download the installer directly from Blizzard here](https://www.battle.net/download/getInstallerForGame?os=win&locale=enUS&version=LIVE&gameProgram=WARCRAFT_3).
 
 
 ## Playing
 
 ### Battle.net
 
-Playing Warlock on Battle.net requires no additional setup and is the recommended platform to play Warlock on. Simply run the game and log into Battle.net and create or join games on the custom games list. The latest map can be found [here](https://www.warlockbrawl.com/download/).
+Playing Warlock on Battle.net requires no additional setup and is the recommended platform to play Warlock on. Run the game and log into Battle.net and create or join games on the custom games list. The latest map can be found [here](https://www.warlockbrawl.com/download/).
 
 
 ### Other clients

@@ -5,67 +5,6 @@ block append config
     app.title = 'Download - ' + app.title;
 
 block content
-  -
-    const baseUrl = 'https://www.warlockbrawl.com';
-
-    const releases = [
-      {
-        title: '1.02',
-        direct: baseUrl + '/files/wc3/Warlock1.02.w3x'
-      },
-      {
-        title: '1.01b',
-        changelog: app.links.forum + 'd/426-warlock-1-01b-released',
-        direct: baseUrl + '/files/wc3/Warlock1.01b.w3x'
-      },
-      {
-        title: '1.01',
-        changelog: app.links.forum + 'd/370-warlock-1-01-released',
-        direct: baseUrl + '/files/wc3/Warlock1.01.w3x'
-      },
-      {
-        title: '1.00c',
-        changelog: app.links.forum + 'd/151-warlock-1-00c-released',
-        direct: baseUrl + '/files/wc3/Warlock1.00c.w3x'
-      },
-      {
-        title: '1.00b',
-        changelog: app.links.forum + 'd/98-warlock-1-00b-released',
-        direct: baseUrl + '/files/wc3/Warlock1.00b.w3x'
-      },
-      {
-        title: '1.00',
-        direct: baseUrl + '/files/wc3/Warlock1.00.w3x',
-      },
-      {
-        title: '099c',
-        direct: baseUrl + '/files/wc3/Warlock099c.w3x',
-      },
-      {
-        title: '099b',
-        direct: baseUrl + '/files/wc3/Warlock099b.w3m',
-      },
-      {
-        title: '099',
-        direct: baseUrl + '/files/wc3/Warlock099.w3x'
-      },
-      {
-        title: 'Older...',
-        link: app.links.forum + 'd/55-warlock-history'
-      }
-    ];
-
-    const tools = [
-      {
-        title: 'Warlock Keys',
-        direct: baseUrl + '/files/wc3/WarlockKeys.zip'
-      },
-      {
-        title: 'Custom Terrain Editor',
-        direct: baseUrl + '/files/wc3/CustomTerrainEditor.zip'
-      }
-    ];
-
   mixin download-row(download)
     tr
       td= download.title
@@ -91,8 +30,59 @@ block content
     .table-responsive
       table.table.table-sm.download-table
         tbody
-          each release in releases
-            +download-row(release)
+          +download-row({
+            title: '1.02',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.02.w3x'
+          })
+
+          +download-row({
+            title: '1.01b',
+            changelog: app.links.forum + 'd/426-warlock-1-01b-released',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.01b.w3x'
+          })
+
+          +download-row({
+            title: '1.01',
+            changelog: app.links.forum + 'd/370-warlock-1-01-released',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.01.w3x'
+          })
+
+          +download-row({
+            title: '1.00c',
+            changelog: app.links.forum + 'd/151-warlock-1-00c-released',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.00c.w3x'
+          })
+
+          +download-row({
+            title: '1.00b',
+            changelog: app.links.forum + 'd/98-warlock-1-00b-released',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.00b.w3x'
+          })
+
+          +download-row({
+            title: '1.00',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock1.00.w3x',
+          })
+
+          +download-row({
+            title: '099c',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock099c.w3x',
+          })
+
+          +download-row({
+            title: '099b',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock099b.w3m',
+          })
+
+          +download-row({
+            title: '099',
+            direct: 'https://www.warlockbrawl.com/files/wc3/Warlock099.w3x'
+          })
+
+          +download-row({
+            title: 'Older...',
+            link: app.links.forum + 'd/55-warlock-history'
+          })
 
     h3.mt-3 #[+icon('cog')] Warcraft III tools
     p
@@ -101,8 +91,15 @@ block content
     .table-responsive
       table.table.table-sm.download-table
         tbody
-          each tool in tools
-            +download-row(tool)
+          +download-row({
+            title: 'Warlock Keys',
+            direct: 'https://www.warlockbrawl.com/files/wc3/WarlockKeys.zip'
+          })
+
+          +download-row({
+            title: 'Custom Terrain Editor',
+            direct: 'https://www.warlockbrawl.com/files/wc3/CustomTerrainEditor.zip'
+          })
 
     h3.mt-3 Dota 2
     p
