@@ -45,7 +45,7 @@ const config = {
             options: {
               functions: {
                 'get-theme-color()': function() {
-                  return new SassColor(parseInt('ff' + themeColor, 16));
+                  return new SassColor(0xff000000 + parseInt(themeColor, 16));
                 }
               }
             }
