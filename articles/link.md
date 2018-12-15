@@ -1,6 +1,6 @@
 **Link** is a multipurpose projectile ability belonging to the <kbd>Y</kbd> column of spells. It has a linear trajectory and returns to its caster upon reaching its range. It has two modes: *Hook* and *Induction*.
 
-### Hook
+## Hook
 
 Upon impact, the link missile will indefinitely link the caster and target together. When linked, an opponent will be pulled towards the caster and take damage, while an ally will only be pulled. When linked to a pillar, the caster will be pulled towards it instead. The link can be broken under any of these conditions:
 
@@ -13,7 +13,7 @@ Upon impact, the link missile will indefinitely link the caster and target toget
 
 The link missile can be pulled back or canceled in mid-air at any time by the caster.
 
-### Induction
+## Induction
 
 Upon impact, the link missile will indefinitely link the caster and target together. When linked to an opponent, they will take damage and the caster will be pulled towards them. This link can be broken under any of these conditions:
 
