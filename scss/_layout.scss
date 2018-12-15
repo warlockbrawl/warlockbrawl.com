@@ -91,7 +91,7 @@ dt {
 
 .app-footer {
   margin-top: ($spacer * 3);
-  background-color: $footer-bg;
+  background-color: darken($body-bg, 1.5%);
   font-size: 85%;
 
   .app-footer-links {
@@ -107,7 +107,7 @@ dt {
     }
 
     a {
-      color: $footer-color;
+      color: $gray-100;
     }
   }
 }
