@@ -13,30 +13,14 @@ $gray-800: #26262b;
 $gray-900: #1c1e21;
 $black:    #000;
 
-$blue:    #007bff;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #dc3545;
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #28a745;
-$teal:    #20c997;
-$cyan:    #17a2b8;
-
-$primary:     $red;
-$secondary:   $gray-700;
-$success:     $green;
-$info:        $cyan;
-$warning:     $yellow;
-$danger:      $red;
-$light:       $gray-800;
-$dark:        $gray-500;
+$primary: #dc3545;
 
 $body-bg:        $gray-800;
-$body-color:     $white;
+$body-color:     $gray-300;
 
 $font-family-sans-serif:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$headings-color: $white;
 
 $link-color:       $primary;
 $link-hover-color: $link-color;
@@ -60,12 +44,13 @@ $card-bg:      $gray-900;
 $breadcrumb-bg: $gray-700;
 
 $pre-color:      inherit;
-$kbd-bg:         rgba($gray-900, .9);
+$code-color:     $gray-300;
+$kbd-bg:         rgba($gray-900, .7);
 $kbd-padding-y:  .1rem;
 $kbd-padding-x:  .4rem;
 
 $jumbotron-bg:            $gray-800;
-$jumbotron-video-bg:      rgba($gray-800, 0.6);
+$jumbotron-video-bg:      rgba($gray-800, .6);
 $zindex-jumbotron-video:  -1010;
 
 $footer-bg:    #222327;
