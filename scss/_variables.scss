@@ -13,7 +13,8 @@ $gray-800: #26262b;
 $gray-900: #1c1e21;
 $black:    #000;
 
-$primary: #dc3545;
+// see: webpack.config.js
+$primary: get-theme-color();
 
 $body-bg:        $gray-800;
 $body-color:     $gray-300;

@@ -1,14 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
+const SassColor = require('node-sass').types.Color;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { lightningLatest, Patch } = require('./warlock-patches');
 
-const icons = {
+const iconCache = {
   regular: require('@fortawesome/free-regular-svg-icons'),
   solid: require('@fortawesome/free-solid-svg-icons')
 };
-
+const themeColor = 'dc3545';
 const routes = require('./html/routes.json');
 const patch = new Patch(lightningLatest);
 
@@ -39,7 +40,16 @@ const config = {
           { loader: 'style-loader' },
           { loader: 'css-loader', options: { importLoaders: 1 } },
           { loader: 'postcss-loader' },
-          { loader: 'sass-loader' }
+          {
+            loader: 'sass-loader',
+            options: {
+              functions: {
+                'get-theme-color()': function() {
+                  return new SassColor(parseInt(`0xff${themeColor}`));
+                }
+              }
+            }
+          }
         ]
       },
       {
@@ -59,12 +69,7 @@ const config = {
     template: route.startsWith('!')
       ? '!!pug-loader!./html/preprocessors/' + route.slice(1)
       : './html/' + route + '.pug',
-    templateParameters: {
-      iconCache: icons,
-      routes: routes,
-      currentRoute: route,
-      patch: patch
-    }
+    templateParameters: { iconCache, routes, currentRoute: route, patch, themeColor }
   }))
 };
 
