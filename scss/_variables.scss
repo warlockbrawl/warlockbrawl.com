@@ -55,5 +55,5 @@ $jumbotron-bg:            $gray-800;
 $jumbotron-video-bg:      rgba($gray-800, .6);
 $zindex-jumbotron-video:  -1010;
 
-$footer-bg:    #222327;
+$footer-bg:    darken($body-bg, 1.5%);
 $footer-color: $gray-100;
